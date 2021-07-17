@@ -1,37 +1,71 @@
 :root {
   --black-01:#151418;
+  --gray: #32383e;
+  --light-gray: #f5f5f5;
   --white:#FFFFFF;
   --gold: #d4bb13;
   --blue-green-darker: #097865;
   --blue-green-lighter : #11d6b5;
+  --sky-blue: #75d6e7;
+  --red-dark: #bd1721;
+  --dark-pink: #fe4464;
+  --carnation-pink: #ffaebc;
 }
 
 .page-background {
   background-color: var(--black-01);
   height: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.announcement-header {
-  background-color: var(--blue-green-darker);
+.carn-cont { background-color: var(--carnation-pink);}
+.lightgray-cont { background-color: var(--light-gray);}
+
+
+.announcement-header { background-color: var(--dark-pink); }
+.announcement-content { background-color: var(--carnation-pink); }
+
+.header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--black-01);
+}
+.header-icon { width: 2rem; margin-right: 5px; }
+.header-label { margin: 15px 0; display: inline; vertical-align: middle; }
+
+.table td, .table th {
+  vertical-align: middle !important;
+  font-size: 12px;
+  padding: .5rem;
 }
 
-.announcement-content {
-  background-color: var(--blue-green-lighter);
-}
+.slp-container { text-align: center; font-size: 25px; }
+.php-earned { font-size: 12px; font-weight: normal; }
+.ban-img { }
+
+/** Header */
+.g-head { background-color: var(--blue-green-lighter); }
+.sky-head { background-color: var(--sky-blue); }
+.p-head { background-color: var(--carnation-pink); }
 
 /** Color */
 .white-text { color: var(--white); }
 .gold-text { color: var(--gold); }
+.pink-text { color: var(--dark-pink); }
 
 /** Padding */
 .pd-0 { padding: 0; }
 .pd-5 { padding: 5px; }
 .pd-10 { padding: 10px; }
+.pd-20 { padding: 20px; }
 .pdT-10 { padding-top: 10px; }
 .pdB-10 { padding-bottom: 10px; }
+.pdB-20 { padding-bottom: 20px; }
 
 /** Margin */
 .mg-0 { margin: 0; }
+.mgB-20 { margin-bottom: 20px; }
 
 /** Font Size */
 .fs-12 { font-size: 12px; }
@@ -40,7 +74,7 @@
 
 .br-upper { border-radius: 4px 4px 0 0; }
 .br-bottom { border-radius: 0 0 4px 4px; }
-
+.br-4 { border-radius: 4px; }
 /** Image */
 .imgsize-icon {
   width: 18px;

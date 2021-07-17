@@ -13,10 +13,13 @@
   </head>
   <body class="page-background">
     <div class="container-fluid">
-      <h2 class="gold-text pdT-10 pdB-10">YATCDE Axie Team</h2>
-
+      <div style="margin: 15px 0; text-align: center;">
+        <img src='img/logo.png' alt="logo" class="header-icon img-fluid">
+        <h3 class="gold-text pdT-10 pdB-10 header-label">YATCDE Axie Team</h3>
+      </div>
+    
       <!-- Announcements-->
-      <article>
+      <article class="mgB-20">
         <div class="announcement-header pd-5 br-upper">
           <h5 class="white-text mg-0">Announcements</h5>
         </div>
@@ -28,37 +31,75 @@
           </ul>
         </div>
       </article>
-
-      <!-- table ranking -->
-      <article>
-        <div class="table-responsive"></div>
-        <table class="table table-dark table-hover table-players">
-          <thead>
-            <tr>
-              <th>Player Name</th>
-              <th>AVG. <img src="img/slp.png"  class="imgsize-icon"></th>
-              <th><img src="img/slp.png"  class="imgsize-icon"> THIS MONTH</th>
-            </tr>
-          </thead>
-          <tbody class="table-body">
-            <!-- <tr>
-              <td>John</td>
-              <td>250 <img src="img/slp.png"  class="imgsize-icon"></td>
-              <td>300 <img src="img/slp.png"  class="imgsize-icon"></td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>Moe</td>
-              <td>mary@example.com</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>Dooley</td>
-              <td>july@example.com</td>
-            </tr> -->
-          </tbody>
-        </table>
-      </article>
     </div>
+
+    <!-- Rules -->
+    <article class="mgB-20">
+      <div class="pd-20 mgB-20 sky-head header">Important Rules</div>
+      <div class="container-fluid">
+        <div class="lightgray-cont br-4 pd-10">
+          <p class="pink-text">
+            <strong>
+              NOTE: Please be reminded that rules are subject to change.
+              Any change will not affect SLP already earned.
+            </strong>
+          </p>
+          <ol class="fs-14">
+            <li>50-50 SHARING (MANAGER/SCHOLAR.)</li>
+            <li>MINIMUM OF 2,250 SLP PER CUT-OFF (EVERY 2 WEEKS) IS REQUIRED TO STAY IN THE SCHOLARSHIP.</li>
+            <li>1 AXIE ACCOUNT PER PLAYER. YOU ARE NOT ALLOWED TO PLAY WITH MULTIPLE AXIE ACCOUNTS.</li>
+            <li>MUST HAVE A PHONE AND STABLE INTERNET CONNECTION.</li>
+            <li>DONT USE PC/DESKTOP.</li>
+            <li>USE OF VPN, EMULATOR OR ANY PC OR MOBILE PHONE THIRD PARTY APPS ARE NOT ALLOWED.</li>
+            <li>PLEASE KEEP IT CONFIDENTIAL.</li>
+            <li>MUST JOIN OUR DISCORD GROUP.</li>
+          </ol>
+          <p>NOTE: FAILURE TO ABIDE BY THE RULES WILL BE AUTOMATICALLY REMOVED FROM THE SCHOLARSHIP PROGRAM.
+            IF AXIE ACCOUNT HAS BEEN BANNED, EARNED SLP WILL BE FORFEITED.</p>
+          <h3 class="pink-text">YOUR AXIE ACCOUNT, YOUR RESPONSIBILITY.</h3>
+        </div>
+      </div>
+    </article>
+
+    <!-- Player Statistics -->
+    <article class="mgB-20">
+      <div class="pd-20 mgB-20 sky-head header">Player Statistics</div>
+      <div class="container-fluid">
+        <div class="pdB-20 white-text slp-container">
+          SLP CURRENT PRICE:
+          <span class="badge badge-warning">
+            ₱<span class="slp-price" id="slp">
+            </span>
+          </span></div>
+        <div class="table-responsive">
+          <table class="table table-dark table-hover table-players">
+            <thead>
+              <tr>
+                <th style="width: 25%">Player Name</th>
+                <th style="width: 50%">TOTAL SLP</th>
+                <th style="width: 25%; text-align: right;">CLAIMABLE SLP</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- Game Info -->
+    <article class="mgB-20 pdB-20">
+      <div class="pd-20 mgB-20 sky-head header">Game Information</div>
+      <div class="container-fluid">
+        <div class="lightgray-cont br-4 pd-10">
+          <p class="pink-text">
+            <strong>SAMPLE BAN SCENARIOS</strong>
+          </p>
+
+          <img src='img/ban.png' alt="logo" class="ban-img img-fluid">
+        </div>
+      </div>
+    </article>
+    
   </body>
 </html>
