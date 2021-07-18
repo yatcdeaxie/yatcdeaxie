@@ -40,9 +40,12 @@
   padding: .5rem;
 }
 
+.table-players { margin-bottom: 0; }
+.payout-status { font-size: 11px; }
+
 .slp-container { text-align: center; font-size: 25px; }
 .php-earned { font-size: 12px; font-weight: normal; }
-.ban-img { }
+.percentage { color: var(--black-01); font-size: 12px; }
 
 /** Header */
 .g-head { background-color: var(--blue-green-lighter); }
@@ -75,8 +78,15 @@
 .br-upper { border-radius: 4px 4px 0 0; }
 .br-bottom { border-radius: 0 0 4px 4px; }
 .br-4 { border-radius: 4px; }
+
 /** Image */
 .imgsize-icon {
   width: 18px;
   height: 18px;
+}
+
+/** List */
+ul {
+  padding-left: 20px;
+  margin: 0;
 }
