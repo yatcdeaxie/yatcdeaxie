@@ -8,58 +8,26 @@ $(document).ready(function () {
   function createPlayersTable() {
     for (var i = 0; i < players.length; i++) {
       let player = players[i];
-      let slpRequired = 1000;
-      let totalSlpCollected = getPlayerAxieInfo(player) || 0;
       let playerTeam = setPlayerTeam(player.team);
-      let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
-      let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed();
-      let progStatus = setProgressStatus(progressWidth);
-      let totalPhp = claimableSlp * slpPhPrice;
+      getPlayerAxieInfo(player.id);
       $(".table-body").append(
         `<tr id=${player.id}>
           <td>${player.name}<br>${playerTeam}
           <td>
             <div class="progress position-relative">
-            <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100">
-                ${numberWithCommas(totalSlpCollected)} (${progressWidth}%)
-              </small>
+              <div class="progress-bar" role="progressbar"></div>
+              <small class="percentage justify-content-center d-flex position-absolute w-100"></small>
             </div>
-            
           <td style="text-align: right;">
-            ${numberWithCommas(claimableSlp)} 
-            <img src='img/slp.png'  class='imgsize-icon'><br>
-            <span class="php-earned badge badge-warning">₱${numberWithCommas(totalPhp.toFixed(2))}</span>`
-      );
+            <span class="claimable-slp">0</span>
+            <img src='img/slp.png' class='imgsize-icon'><br>
+            <span class="php-earned badge badge-warning">₱0.00</span>`);
     }
     sortPlayerByHighestSlp();
   }
 
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-  function sortPlayerByName() {
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("player-list");
-    switching = true;
-    while (switching) {
-      switching = false;
-      rows = table.rows;
-      for (i = 1; i < (rows.length - 1); i++) {
-        shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[0];
-        y = rows[i + 1].getElementsByTagName("TD")[0];
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-      if (shouldSwitch) {
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
   }
 
   function sortPlayerByHighestSlp() {
@@ -85,34 +53,34 @@ $(document).ready(function () {
     }
   }
 
-  function getTotalSlpClaimable(player, totalSlp) {
+  function getTotalSlpClaimable(status, totalSlp) {
+    let slpClaimable = 0;
     if (status === "probationary") {
       if (totalSlp >= 2000) {
-        return totalSlp * 50;
+        slpClaimable = totalSlp * .5;
       } else if(totalSlp >= 1500 && totalSlp < 2000) {
-        return totalSlp * 40;
+        slpClaimable = totalSlp * .4;
       } else if(totalSlp >= 1250 && totalSlp < 1500) {
-        return totalSlp * 30;
+        slpClaimable = totalSlp * .3;
       } else if(totalSlp >= 1000 && totalSlp < 1250) {
-        return totalSlp * 20;
-      } else {
-        return totalSlp * 0;
+        slpClaimable = totalSlp * .2;
       }
     } else if (status === "regular") {
       if (totalSlp >= 3000) {
-        return totalSlp * 50;
+        slpClaimable = totalSlp * .5;
       } else if(totalSlp >= 2700 && totalSlp < 3000) {
-        return totalSlp * 40;
+        slpClaimable = totalSlp * .4;
       } else if(totalSlp >= 2250 && totalSlp < 2700) {
-        return totalSlp * 35;
+        slpClaimable = totalSlp * .35;
       } else if(totalSlp >= 1500 && totalSlp < 2250) {
-        return totalSlp * 30;
+        slpClaimable = totalSlp * .3;
       } else if(totalSlp >= 1000 && totalSlp < 1500) {
-        return totalSlp * 20;
-      } else {
-        return totalSlp * 0;
+        slpClaimable = totalSlp * .2;
       }
+    } else {
+      slpClaimable = totalSlp;
     }
+    return slpClaimable.toFixed();
   }
 
   function setProgressStatus(progressWidth) {
@@ -133,13 +101,32 @@ $(document).ready(function () {
     return teamIcons.join("");
   }
 
-  function getPlayerAxieInfo(player) {
+  function getPlayerAxieInfo(id) {
     $.ajax({
       type: "GET",
-      url: "https://lunacia.skymavis.com/game-api/clients/" + player.id + "/items/1",
+      url: `https://game-api.skymavis.com/game-api/clients/${id}/items/1`,
       dataType: "json",
       success: function (result, status, xhr) {
-        return result["total"];
+        let playerId = result.client_id;
+        let totalSlpCollected = result.claimable_total;
+        let slpRequired = 2250;
+        let player = players.find((player) => player.id === playerId );
+        let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
+        let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed();
+        let progStatus = setProgressStatus(progressWidth);
+        let totalPhp = claimableSlp * slpPhPrice;
+        $(`#${playerId} .progress-bar`).replaceWith(`
+          <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
+              <small class="percentage justify-content-center d-flex position-absolute w-100">
+                ${numberWithCommas(totalSlpCollected)} (${progressWidth}%)
+              </small>
+            </div>
+          `);
+        $(`#${playerId} .claimable-slp`).replaceWith(`
+          <span class="claimable-slp">${numberWithCommas(claimableSlp)}</span>
+        `);
+        $(`#${playerId} .php-earned`).replaceWith(`
+          <span class="php-earned badge badge-warning">₱${numberWithCommas(totalPhp.toFixed(2))}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
@@ -156,7 +143,6 @@ $(document).ready(function () {
         var slpPrice = $(".slp-price");
         let slp = Object.values(result).find((slp) => slp.php);
         slpPhPrice = slp.php;
-        console.log(slpPhPrice);
         slpPrice.append(`${slpPhPrice}`);
         $("slp").html(slpPrice);
       },
@@ -186,7 +172,7 @@ $(document).ready(function () {
   //         progStatus = 'bg-success';
   //       }
   //       let totalSlpCollected = result["total"];
-  //       let totalPhp = (totalSlpCollected/2) * slpPhPrice;
+  //       let totalPhp = (totalSlpCollected/2);
   //       body.append("<tr>");
   //       body.append("<td>" + player.name + "</td>");
   //       body.append(`
