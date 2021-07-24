@@ -8,9 +8,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    
     <script src="scripts/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="scripts/players.js"></script>
+    <script type="text/javascript" src="scripts/axie.js"></script>
   </head>
   <body class="page-background">
     <div class="container-fluid">
@@ -45,18 +48,17 @@
             </strong>
           </p>
           <ol class="fs-14">
-            <li>PERCENTAGE SHARING BETWEEN MANAGER AND SCHOLAR DEPENDS ON THE TOTAL SLP COLLECTED PER CUT-OFF.
-              REWARDS WILL BE GIVEN TO TOP 1 AND TOP 2 PLAYERS WITH HIGHEST SLP COLLECTED PER CUT-OFF. 
+            <li>PERCENTAGE SHARING BETWEEN MANAGER AND SCHOLAR DEPENDS ON THE TOTAL SLP COLLECTED PER CUT-OFF. 
               SEE <a href="#payout"> PAYOUT</a> FOR MORE DETAILS.</li>
-            <li>MINIMUM OF 1,000 SLP PER CUT-OFF (EVERY 2 WEEKS) IS REQUIRED TO STAY IN THE SCHOLARSHIP.</li>
+            <li>MINIMUM OF 2,250 <img src='img/slp.png' class='imgsize-icon'> PER CUT-OFF (EVERY 2 WEEKS) IS REQUIRED TO STAY IN THE SCHOLARSHIP.</li>
             <li>1 AXIE ACCOUNT PER PLAYER. YOU ARE NOT ALLOWED TO PLAY WITH MULTIPLE AXIE ACCOUNTS.</li>
             <li>MUST HAVE A PHONE AND STABLE INTERNET CONNECTION.</li>
-            <li>DONT USE PC/DESKTOP.</li>
             <li>USE OF VPN, EMULATOR OR ANY PC OR MOBILE PHONE THIRD PARTY APPS ARE NOT ALLOWED.</li>
+            <li>DO NOT LEAVE YOUR AXIE ACCOUNT OPEN. ALWAYS LOG-OUT FROM YOUR ACCOUNT AFTER PLAYING.</li>
             <li>STREAMING AND POSTING INFORMATION PERTAINING TO YOUR AXIE/SCHOLARSHIP TO ANY SOCIAL MEDIA PLATFORM IS PROHIBITED.
                 PLEASE KEEP IT CONFIDENTIAL. </li>
             <li>REQUEST FOR AN ADVANCE PAYOUT IS NOT ALLOWED.</li>
-            <li>MUST JOIN OUR DISCORD GROUP.</li>
+            <li>MUST JOIN OUR <a href="https://discord.gg/PBjaH7bM">DISCORD</a> GROUP.</li>
           </ol>
           <p>NOTE: FAILURE TO ABIDE BY THE RULES WILL BE AUTOMATICALLY REMOVED FROM THE SCHOLARSHIP PROGRAM.
             IF AXIE ACCOUNT HAS BEEN BANNED, EARNED SLP WILL BE FORFEITED.</p>
@@ -95,7 +97,6 @@
       <div class="pd-20 mgB-20 sky-head header">Payout Information</div>
       <div class="container-fluid">
         <div class="lightgray-cont br-4 pd-10">
-
           <ul class="fs-14">
             <li>SNAPSHOT OF SLP WILL BE TAKEN ON EVERY 1ST AND 16TH OF THE MONTH BEFORE 6:00 AM. 
               NO PLAYERS SHOULD BE PLAYING AT THIS TIME. SNAPSHOT CAN BE VIEWED IN OUR DISCORD GROUP.</li>  
@@ -104,13 +105,15 @@
               PLEASE CREATE YOUR OWN 
               <a href="https://chrome.google.com/webstore/detail/ronin-wallet/fnjhmkhhmkbjkkabndcnnogagogbneec">RONIN WALLET</a>.
               <br/>
-              <a href="https://www.youtube.com/watch?v=14H9v1R-R5c">How to setup ronin wallet in mobile</a></li>   
           </ul>
+          <br/>
+          <a href="https://www.youtube.com/watch?v=14H9v1R-R5c">How to setup ronin wallet in mobile</a></li>  
+          <p><a href="https://www.youtube.com/watch?v=RugOPR1DVX8">How to cash-out SLP to PHP</a></p>
 
-          <div class="pink-text pdT-10 pdB-10"><h5><strong>MANAGER/SCHOLAR PERCENTAGE SHARING</strong></h5></div>
+          <h5 class="pink-text pdT-10 pdB-10"><strong>MANAGER/SCHOLAR PERCENTAGE SHARING</strong></h5>
 
           <!-- probationary -->
-          <div><h6><strong>PROBATIONARY <small>(1st payout)</small></strong></h6></div>
+          <h6><strong>PROBATIONARY <small>(1st payout)</small></strong></h6>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -155,7 +158,7 @@
           </table>
 
           <!-- regular -->
-          <div><h6><strong>REGULAR <small>(2nd payout onwards)</small></strong></h6></div>
+          <h6><strong>REGULAR <small>(2nd payout onwards)</small></strong></h6>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -203,6 +206,23 @@
               </tr>
             </tbody>
           </table>
+
+          <h6 class="pink-text pdT-10 pdB-10"><strong>SAMPLE COMPUTATION</strong></h6>
+          <b>PLAYER 1</b>
+          <div class="fs-14 row">
+            <div class="pdB-10 col-xs-12 col-sm-6">
+              <b class="pink-text">1st payout</b><br/>
+              Status: Probationary<br/>
+              Total farmed in 2 weeks: 2,500 <img src='img/slp.png' class='imgsize-icon'/><br/>
+              Claimable SLP: 2500 X .50 = 1,250 <img src='img/slp.png' class='imgsize-icon'/>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <b class="pink-text">2nd payout</b><br/>
+              Status: Regular<br/>
+              Total farmed in 2 weeks: 2,000 <img src='img/slp.png' class='imgsize-icon'/><br/>
+              Claimable SLP: 2500 X .35 = 875 <img src='img/slp.png' class='imgsize-icon'/>
+            </div>
+          </ul>
         </div>
       </div>
     </article>
@@ -212,10 +232,57 @@
       <div class="pd-20 mgB-20 sky-head header">Game Information</div>
       <div class="container-fluid">
         <div class="lightgray-cont br-4 pd-10">
-          <p class="pink-text">
-            <strong>SAMPLE BAN SCENARIOS</strong>
-          </p>
+          <!-- Arena and Adventure -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#arena">Arena</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#adventure">Adventure</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="arena">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>MMR</th>
+                    <th>SLP GAINED PER WIN</th>
+                  </tr>
+                </thead>
+                <tbody class="table-arena"></tbody>
+              </table>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="adventure">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>RUIN LEVEL</th>
+                    <th>SLP GAINED PER WIN</th>
+                  </tr>
+                </thead>
+                <tbody class="table-adventure"></tbody>
+              </table>
+              <div class="fs-12 pdB-20">
+                <b>Rewards</b><br/>
+                Defeating certain bosses in Adventure mode earns you one time SLP  rewards.
+                <ul>
+                  <li>Winning Level 21 = 200 <img src='img/slp.png' class='imgsize-icon'/></li>
+                  <li>Winning Level 36 = 300 <img src='img/slp.png' class='imgsize-icon'/></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
+          <p class="pink-text"><b>USEFUL VIDEOS FOR BEGINNERS</b></p>
+          <ul>
+            <li><a href="https://youtu.be/wCzNGuraXn4">EXP and SLP Farming Guide</a></li>
+            <li><a href="https://youtu.be/RQuWyBFzzRE">Basic Battle Guide</a></li>
+          </ul>
+          <br/>
+
+          <p class="pink-text"><b>SAMPLE BAN SCENARIOS</b></p>
           <img src='img/ban.png' alt="logo" class="ban-img img-fluid">
         </div>
       </div>

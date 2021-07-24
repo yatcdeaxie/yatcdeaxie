@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(() => {
   var players = playersList;
   let slpPhPrice = 0
 
@@ -23,7 +23,6 @@ $(document).ready(function () {
             <img src='img/slp.png' class='imgsize-icon'><br>
             <span class="php-earned badge badge-warning">₱0.00</span>`);
     }
-    sortPlayerByHighestSlp();
   }
 
   function numberWithCommas(x) {
@@ -39,9 +38,9 @@ $(document).ready(function () {
       rows = table.rows;
       for (i = 1; i < (rows.length - 1); i++) {
         shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[2];
-        y = rows[i + 1].getElementsByTagName("TD")[2];
-        if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        x = rows[i].getElementsByTagName("TD")[2].firstElementChild;
+        y = rows[i + 1].getElementsByTagName("TD")[2].firstElementChild;
+        if (x.innerHTML < y.innerHTML) {
           shouldSwitch = true;
           break;
         }
@@ -83,7 +82,7 @@ $(document).ready(function () {
     return slpClaimable.toFixed();
   }
 
-  function setProgressStatus(progressWidth) {
+  function setProgressBarStatus(progressWidth) {
     if (progressWidth < 50) {
       return '#ff7070';
     } else if(progressWidth < 100 && progressWidth >= 50) {
@@ -108,12 +107,12 @@ $(document).ready(function () {
       dataType: "json",
       success: function (result, status, xhr) {
         let playerId = result.client_id;
-        let totalSlpCollected = result.claimable_total;
+        let totalSlpCollected = result.total;
         let slpRequired = 2250;
-        let player = players.find((player) => player.id === playerId );
+        let player = players.find((player) => player.id === playerId);
         let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
         let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed();
-        let progStatus = setProgressStatus(progressWidth);
+        let progStatus = setProgressBarStatus(progressWidth);
         let totalPhp = claimableSlp * slpPhPrice;
         $(`#${playerId} .progress-bar`).replaceWith(`
           <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
@@ -152,48 +151,7 @@ $(document).ready(function () {
     });
   }
 
-  // for (var i = 0; i < players.length; i++) {
-  //   let player = players[i];
-  //   console.log(player);
-  //   $.ajax({
-  //     type: "GET",
-  //     url: "https://lunacia.skymavis.com/game-api/clients/" + player.id + "/items/1",
-  //     dataType: "json",
-  //     success: function (result, status, xhr) {
-  //       var body = $(".table-body");
-  //       var slpRequired = 2250;
-  //       let progressWidth = ((result["total"]/slpRequired) * 100).toFixed();
-  //       let progStatus;
-  //       if (progressWidth < 50) {
-  //         progStatus = 'bg-danger';
-  //       } else if(progressWidth < 100 && progressWidth >= 50) {
-  //         progStatus = 'bg-warning';
-  //       } else {
-  //         progStatus = 'bg-success';
-  //       }
-  //       let totalSlpCollected = result["total"];
-  //       let totalPhp = (totalSlpCollected/2);
-  //       body.append("<tr>");
-  //       body.append("<td>" + player.name + "</td>");
-  //       body.append(`
-  //           <td>
-  //             <div class="progress">
-  //               <div class="progress-bar ${progStatus}" style="width: ${progressWidth}%"> 
-  //                 ${totalSlpCollected} (${progressWidth}%)
-  //               </div>
-  //             </div>
-  //           </td>`);
-  //       body.append(`<td style="text-align: right;">
-  //                   ${totalSlpCollected/2} 
-  //                   <img src='img/slp.png'  class='imgsize-icon'><br>
-  //                   <span class="php-earned badge badge-warning">₱${totalPhp.toFixed()}</span>
-  //                 </td>`);
-  //       body.append("</tr>");
-  //       $("#message").html(body);
-  //     },
-  //     error: function (xhr, status, error) {
-  //       console.log(xhr.status + "" + xhr.statusText);
-  //     }
-  //   });
-  // }
+  $(document).ajaxStop(function() {
+    sortPlayerByHighestSlp();
+  });
 });

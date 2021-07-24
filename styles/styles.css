@@ -47,6 +47,15 @@
 .php-earned { font-size: 12px; font-weight: normal; }
 .percentage { color: var(--black-01); font-size: 12px; }
 
+.nav-link.active {
+  background-color: var(--gray) !important;
+  color: var(--white) !important;
+}
+
+.nav-link:not(.active) {
+  color: var(--black-01) !important;
+}
+
 /** Header */
 .g-head { background-color: var(--blue-green-lighter); }
 .sky-head { background-color: var(--sky-blue); }
@@ -72,8 +81,8 @@
 
 /** Font Size */
 .fs-12 { font-size: 12px; }
-.fs-12 { font-size: 16px; }
-.fs-12 { font-size: 12px; }
+.fs-13 { font-size: 13px; }
+.fs-14 { font-size: 14px; }
 
 .br-upper { border-radius: 4px 4px 0 0; }
 .br-bottom { border-radius: 0 0 4px 4px; }
