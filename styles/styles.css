@@ -1,6 +1,7 @@
 :root {
   --black-01:#151418;
   --gray: #32383e;
+  --gray-01: #a7a7a7;
   --light-gray: #f5f5f5;
   --white:#FFFFFF;
   --gold: #d4bb13;
@@ -20,7 +21,6 @@
 
 .carn-cont { background-color: var(--carnation-pink);}
 .lightgray-cont { background-color: var(--light-gray);}
-
 
 .announcement-header { background-color: var(--dark-pink); }
 .announcement-content { background-color: var(--carnation-pink); }
@@ -52,7 +52,13 @@
   color: var(--white) !important;
 }
 
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    background-color: var(--gray-01);
+}
+
 .nav-link:not(.active) {
+  border-color: var(--white);
+  background-color: var(--gray-01);
   color: var(--black-01) !important;
 }
 

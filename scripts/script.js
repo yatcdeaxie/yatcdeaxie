@@ -9,19 +9,21 @@ $(document).ready(() => {
     for (var i = 0; i < players.length; i++) {
       let player = players[i];
       let playerTeam = setPlayerTeam(player.team);
-      getPlayerAxieInfo(player.id);
       $(".table-body").append(
         `<tr id=${player.id}>
           <td>${player.name}<br>${playerTeam}
           <td>
             <div class="progress position-relative">
               <div class="progress-bar" role="progressbar"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100"></small>
+              <small class="percentage justify-content-center d-flex position-absolute w-100">0 (0%)</small>
             </div>
           <td style="text-align: right;">
             <span class="claimable-slp">0</span>
             <img src='img/slp.png' class='imgsize-icon'><br>
             <span class="php-earned badge badge-warning">₱0.00</span>`);
+        if (i === players.length - 1) {
+          getPlayerAxieInfo();
+        }
     }
   }
 
@@ -100,37 +102,42 @@ $(document).ready(() => {
     return teamIcons.join("");
   }
 
-  function getPlayerAxieInfo(id) {
-    $.ajax({
-      type: "GET",
-      url: `https://game-api.skymavis.com/game-api/clients/${id}/items/1`,
-      dataType: "json",
-      success: function (result, status, xhr) {
-        let playerId = result.client_id;
-        let totalSlpCollected = result.total;
-        let slpRequired = 2250;
-        let player = players.find((player) => player.id === playerId);
-        let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
-        let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed();
-        let progStatus = setProgressBarStatus(progressWidth);
-        let totalPhp = claimableSlp * slpPhPrice;
-        $(`#${playerId} .progress-bar`).replaceWith(`
-          <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100">
-                ${numberWithCommas(totalSlpCollected)} (${progressWidth}%)
-              </small>
+  function getPlayerAxieInfo() {
+    for (var i = 0; i < players.length; i++) {
+      let id = players[i].id;
+      $.ajax({
+        type: "GET",
+        url: `https://game-api.skymavis.com/game-api/clients/${id}/items/1`,
+        dataType: "json",
+        success: function (result, status, xhr) {
+          let playerId = result.client_id;
+          let totalSlpCollected = result.total;
+          let slpRequired = 2250;
+          let player = players.find((player) => player.id === playerId);
+          let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
+          let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed(2);
+          let progStatus = setProgressBarStatus(progressWidth);
+          let totalPhp = claimableSlp * slpPhPrice;
+          $(`#${playerId} .progress`).replaceWith(`
+            <div class="progress position-relative">
+              <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
+                <small class="percentage justify-content-center d-flex position-absolute w-100">
+                  ${numberWithCommas(totalSlpCollected)} (${progressWidth}%)
+                </small>
+              </div>
             </div>
+            `);
+          $(`#${playerId} .claimable-slp`).replaceWith(`
+            <span class="claimable-slp">${numberWithCommas(claimableSlp)}</span>
           `);
-        $(`#${playerId} .claimable-slp`).replaceWith(`
-          <span class="claimable-slp">${numberWithCommas(claimableSlp)}</span>
-        `);
-        $(`#${playerId} .php-earned`).replaceWith(`
-          <span class="php-earned badge badge-warning">₱${numberWithCommas(totalPhp.toFixed(2))}</span>`);
-      },
-      error: function (xhr, status, error) {
-        console.log(`${xhr.status} ${xhr.statusText}`);
-      }
-    });
+          $(`#${playerId} .php-earned`).replaceWith(`
+            <span class="php-earned badge badge-warning">₱${numberWithCommas(totalPhp.toFixed(2))}</span>`);
+        },
+        error: function (xhr, status, error) {
+          console.log(`${xhr.status} ${xhr.statusText}`);
+        }
+      });
+    }
   }
 
   function getSlpPrice() {

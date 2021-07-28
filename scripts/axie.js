@@ -28,7 +28,7 @@ $(document).ready(() => {
       let arena = arenaLvl[i];
       $(".table-arena").append(
         `<tr>
-          <td>${arena.mmr}
+          <td><img src='img/trophy.png' class='imgsize-icon'/> ${arena.mmr}
           <td>${arena.slpGained} <img src='img/slp.png' class='imgsize-icon'/>`);
     }
   }
