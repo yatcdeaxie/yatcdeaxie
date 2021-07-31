@@ -39,7 +39,7 @@ $(document).ready(() => {
         shouldSwitch = false;
         x = rows[i].getElementsByTagName("TD")[2].firstElementChild;
         y = rows[i + 1].getElementsByTagName("TD")[2].firstElementChild;
-        if (x.innerHTML < y.innerHTML) {
+        if (removeCommaFromNumber(x.innerHTML) < removeCommaFromNumber(y.innerHTML)) {
           shouldSwitch = true;
           break;
         }
@@ -49,6 +49,9 @@ $(document).ready(() => {
         switching = true;
       }
     }
+  }
+  function removeCommaFromNumber(number) {
+    return number.replace(/,/g,'');
   }
 
   function getTotalSlpClaimable(status, totalSlp) {
