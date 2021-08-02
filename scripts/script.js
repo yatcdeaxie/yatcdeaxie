@@ -15,7 +15,10 @@ $(document).ready(() => {
           <td>
             <div class="progress position-relative">
               <div class="progress-bar" role="progressbar"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100">0 (0%)</small>
+              <small class="percentage justify-content-center d-flex position-absolute w-100">
+              <span class="total-slp">0</span> 
+              <span class="total-slp-width">(0.00%)</span>
+              </small>
             </div>
           <td style="text-align: right;">
             <span class="claimable-slp">0</span>
@@ -37,8 +40,8 @@ $(document).ready(() => {
       rows = table.rows;
       for (i = 1; i < (rows.length - 1); i++) {
         shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[2].firstElementChild;
-        y = rows[i + 1].getElementsByTagName("TD")[2].firstElementChild;
+        x = rows[i].getElementsByTagName("TD")[1].firstElementChild.getElementsByClassName("total-slp")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[1].firstElementChild.getElementsByClassName("total-slp")[0];
         if (removeCommaFromNumber(x.innerHTML) < removeCommaFromNumber(y.innerHTML)) {
           shouldSwitch = true;
           break;
@@ -51,7 +54,7 @@ $(document).ready(() => {
     }
   }
   function removeCommaFromNumber(number) {
-    return number.replace(/,/g,'');
+    return parseInt(number.replace(/,/g,''));
   }
 
   function getTotalSlpClaimable(status, totalSlp) {
@@ -120,7 +123,8 @@ $(document).ready(() => {
           <div class="progress position-relative">
             <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
               <small class="percentage justify-content-center d-flex position-absolute w-100">
-                ${numberWithCommas(totalSlpCollected)} (${progressWidth}%)
+                <span class="total-slp">${numberWithCommas(totalSlpCollected)}</span> 
+                <span class="total-slp-width">(${progressWidth}%)</span>
               </small>
             </div>
           </div>

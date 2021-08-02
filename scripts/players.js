@@ -23,7 +23,7 @@ var playersList =
     name: "Jence",
     status: "probationary",
     team: ["plant", "aqua", "beast"]
-  },
+  }
   // {
   //   id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
   //   name: "Augustusaurus",
