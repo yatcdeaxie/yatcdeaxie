@@ -1,8 +1,39 @@
 $(document).ready(() => {
+
   var players = playersList;
   let slpPhPrice = 0
+  let loggedInPlayer;
+  let validCredential = localStorage.getItem('credential');
 
-  getSlpPrice();
+  if (validCredential) {
+    let decodedPasscode = atob(validCredential);
+    loggedInPlayer = players.find(player => player.id === decodedPasscode);
+    console.log(loggedInPlayer);
+    $('#body-container').show();
+    $('.login-form').hide();
+    getSlpPrice();
+  } else {
+    $('#body-container').hide();
+  }
+  
+  $('#submit-passcode').click((e) => {
+    let passcode = document.getElementById("passcode").value;
+    let decodedPasscode = atob(passcode);
+    loggedInPlayer = players.find(player => player.id === decodedPasscode);
+    console.log(loggedInPlayer);
+    if (loggedInPlayer) {
+      $('#passcode').removeClass("is-invalid");
+      $('#passcode').get(0).setCustomValidity('');
+      $('.login-form').hide();
+      localStorage.setItem("credential",passcode);
+      $('#body-container').show();
+      e.preventDefault();
+      getSlpPrice();
+    } else {
+      $('#passcode').get(0).setCustomValidity('Invalid passcode');
+      $('#passcode').addClass("is-invalid");  
+    }
+  });
 
   function createPlayersTable() {
     for (var i = 0; i < players.length; i++) {

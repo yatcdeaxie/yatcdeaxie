@@ -21,290 +21,131 @@
         <img src='img/logo.png' alt="logo" class="header-icon img-fluid">
         <h3 class="gold-text pdT-10 pdB-10 header-label">YATCDE Axie Team</h3>
       </div>
-    
+    </div>
+
+    <!-- Login -->
+    <div class="container-fluid login-form">
+      <div class="card">
+        <div class="card-body">  
+          <div class="card-text">  
+            <form>  
+              <div class="form-group">  
+                <label for="passcode">Get your passcode from Yatcde/YATV via Discord to access the Tracker.</label>  
+                <input type="text" id="passcode" placeholder="Enter your passcode..." class="form-control">
+                <div class="invalid-feedback">Please input a valid passcode</div> 
+              </div>
+              
+              <button type="submit" id="submit-passcode" i class="btn btn-primary btn-block">Sign in</button>
+            </form>  
+          </div>  
+        </div>
+      </div>  
+    </div>
+
+    <div id="body-container">
       <!-- Announcements-->
       <article class="mgB-20">
-        <div class="announcement-header pd-10 br-upper">
-          <h5 class="white-text mg-0">Announcements</h5>
+        <div class="container-fluid">
+          <div class="announcement-header pd-10 br-upper">
+            <h5 class="white-text mg-0">Announcements</h5>
+          </div>
+          <div class="pd-10 announcement-content br-bottom">
+            NO ANNOUNCEMENT YET
+            <!-- <ul class="fs-14">
+              <li></li>
+            </ul> -->
+          </div>
         </div>
-        <div class="pd-10 announcement-content br-bottom">
-          NO ANNOUNCEMENT YET
-          <!-- <ul class="fs-14">
-            <li></li>
-          </ul> -->
+      </article>
+
+      <!-- Player Statistics -->
+      <article class="mgB-20">
+        <div class="pd-20 mgB-20 sky-head header">Player Statistics</div>
+        <div class="container-fluid">
+          <div class="pdB-20 white-text slp-container">
+            SLP CURRENT PRICE:
+            <span class="badge badge-warning">
+              ₱<span class="slp-price" id="slp"></span>
+            </span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-dark table-hover table-players" id="player-list">
+              <thead>
+                <tr>
+                  <th style="width: 25%">PLAYER</th>
+                  <th style="width: 50%">TOTAL SLP</th>
+                  <th style="width: 25%; text-align: right;">CLAIMABLE SLP</th>
+                </tr>
+              </thead>
+              <tbody class="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <!-- Payout -->
+      <article class="mgB-20 pdB-20" id="payout">
+        <div class="pd-20 mgB-20 sky-head header">Payout Information</div>
+        <div class="container-fluid">
+          <div class="lightgray-cont br-4 pd-10">
+            <div class="pink-text"><strong>Effective: August 16, 2021</strong></div>
+            <ul class="fs-14">
+              <li>SNAPSHOT OF SLP WILL BE TAKEN ON EVERY 15TH AND 30TH OF THE MONTH BY 8:00 PM. 
+                NO PLAYER SHOULD BE PLAYING AT THIS TIME. SNAPSHOT CAN BE VIEWED IN OUR DISCORD GROUP.</li>  
+              <li>SLP WILL BE GIVEN TO THE PLAYER AFTER SNAPSHOT HAS BEEN MADE. 
+                MANAGER WILL INFORM THE PLAYER IF SLP HAS BEEN CREDITED TO THEIR RONIN WALLET.
+                PLEASE CREATE YOUR OWN 
+                <a href="https://chrome.google.com/webstore/detail/ronin-wallet/fnjhmkhhmkbjkkabndcnnogagogbneec">RONIN WALLET</a>.
+                <br/>
+            </ul>
+            <br/>
+            <a href="https://www.youtube.com/watch?v=14H9v1R-R5c">How to setup ronin wallet in mobile</a></li>  
+            <p><a href="https://www.youtube.com/watch?v=RugOPR1DVX8">How to cash-out SLP to PHP</a></p>
+
+            <h5 class="pink-text pdT-10 pdB-10"><strong>MANAGER/SCHOLAR PERCENTAGE SHARING</strong></h5>
+
+            <!-- SLP Sharing -->
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>SLP Farmed<br/>(during snapshot)</th>
+                  <th>Manager</th>
+                  <th>Scholar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>below 1,125</td>
+                  <td>100%</td>
+                  <td>0 
+                    <span class="badge badge-danger payout-status">FORFEITED</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1,125 - 2,024</td>
+                  <td>65%</td>
+                  <td>35%</td>
+                </tr>
+                <tr>
+                  <td>2,025 - 2,474</td>
+                  <td>60%</td>
+                  <td>40%</td>
+                </tr>
+                <tr>
+                  <td>2,475 - 2,924</td>
+                  <td>55%</td>
+                  <td>45%</td>
+                </tr>
+                <tr>
+                  <td>2,925 and above</td>
+                  <td>50%</td>
+                  <td>50%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </article>
     </div>
-
-    <!-- Rules -->
-    <article class="mgB-20">
-      <div class="pd-20 mgB-20 sky-head header">Important Rules</div>
-      <div class="container-fluid">
-        <div class="lightgray-cont br-4 pd-10">
-          <p class="pink-text">
-            <strong>
-              NOTE: Please be reminded that rules are subject to change.
-              Any change will not affect SLP already earned.
-            </strong>
-          </p>
-          <ol class="fs-14">
-            <li>PERCENTAGE SHARING BETWEEN MANAGER AND SCHOLAR DEPENDS ON THE TOTAL SLP COLLECTED PER CUT-OFF. 
-              SEE <a href="#payout"> PAYOUT</a> FOR MORE DETAILS.</li>
-            <li>MINIMUM OF 2,250 <img src='img/slp.png' class='imgsize-icon'> PER CUT-OFF (EVERY 2 WEEKS) IS REQUIRED TO STAY IN THE SCHOLARSHIP.</li>
-            <li>1 AXIE ACCOUNT PER PLAYER. YOU ARE NOT ALLOWED TO PLAY WITH MULTIPLE AXIE ACCOUNTS.</li>
-            <li>MUST HAVE A PHONE AND STABLE INTERNET CONNECTION.</li>
-            <li>USE OF VPN, EMULATOR OR ANY PC OR MOBILE PHONE THIRD PARTY APPS ARE NOT ALLOWED.</li>
-            <li>DO NOT LEAVE YOUR AXIE ACCOUNT OPEN. ALWAYS LOG-OUT FROM YOUR ACCOUNT AFTER PLAYING.</li>
-            <li>STREAMING AND POSTING INFORMATION PERTAINING TO YOUR AXIE/SCHOLARSHIP TO ANY SOCIAL MEDIA PLATFORM IS PROHIBITED.
-                PLEASE KEEP IT CONFIDENTIAL. </li>
-            <li>REQUEST FOR AN ADVANCE PAYOUT IS NOT ALLOWED.</li>
-            <li>MUST JOIN OUR <a href="https://discord.gg/VUCbJsae">DISCORD</a> GROUP.</li>
-          </ol>
-          <p>NOTE: FAILURE TO ABIDE BY THE RULES WILL BE AUTOMATICALLY REMOVED FROM THE SCHOLARSHIP PROGRAM.
-            IF AXIE ACCOUNT HAS BEEN BANNED, EARNED SLP WILL BE FORFEITED.</p>
-          <h3 class="pink-text">YOUR AXIE ACCOUNT, YOUR RESPONSIBILITY.</h3>
-        </div>
-      </div>
-    </article>
-
-    <!-- Player Statistics -->
-    <article class="mgB-20">
-      <div class="pd-20 mgB-20 sky-head header">Player Statistics</div>
-      <div class="container-fluid">
-        <div class="pdB-20 white-text slp-container">
-          SLP CURRENT PRICE:
-          <span class="badge badge-warning">
-            ₱<span class="slp-price" id="slp"></span>
-          </span>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-dark table-hover table-players" id="player-list">
-            <thead>
-              <tr>
-                <th style="width: 25%">PLAYER</th>
-                <th style="width: 50%">TOTAL SLP</th>
-                <th style="width: 25%; text-align: right;">CLAIMABLE SLP</th>
-              </tr>
-            </thead>
-            <tbody class="table-body"></tbody>
-          </table>
-        </div>
-      </div>
-    </article>
-
-    <!-- Payout -->
-    <article class="mgB-20" id="payout">
-      <div class="pd-20 mgB-20 sky-head header">Payout Information</div>
-      <div class="container-fluid">
-        <div class="lightgray-cont br-4 pd-10">
-          <ul class="fs-14">
-            <li>SNAPSHOT OF SLP WILL BE TAKEN ON EVERY 1ST AND 16TH OF THE MONTH BEFORE 6:00 AM. 
-              NO PLAYERS SHOULD BE PLAYING AT THIS TIME. SNAPSHOT CAN BE VIEWED IN OUR DISCORD GROUP.</li>  
-            <li>SLP WILL BE GIVEN TO THE PLAYER AFTER SNAPSHOT HAS BEEN MADE. 
-              MANAGER WILL INFORM THE PLAYER IF SLP HAS BEEN CREDITED TO THEIR RONIN WALLET.
-              PLEASE CREATE YOUR OWN 
-              <a href="https://chrome.google.com/webstore/detail/ronin-wallet/fnjhmkhhmkbjkkabndcnnogagogbneec">RONIN WALLET</a>.
-              <br/>
-          </ul>
-          <br/>
-          <a href="https://www.youtube.com/watch?v=14H9v1R-R5c">How to setup ronin wallet in mobile</a></li>  
-          <p><a href="https://www.youtube.com/watch?v=RugOPR1DVX8">How to cash-out SLP to PHP</a></p>
-
-          <h5 class="pink-text pdT-10 pdB-10"><strong>MANAGER/SCHOLAR PERCENTAGE SHARING</strong></h5>
-
-          <!-- probationary -->
-          <h6><strong>PROBATIONARY <small>(1st payout)</small></strong></h6>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>SLP Farmed<br/>(during snapshot)</th>
-                <th>Manager</th>
-                <th>Scholar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>below 1,000</td>
-                <td>100%</td>
-                <td>0 
-                  <span class="badge badge-danger payout-status">FORFEITED</span>
-                </td>
-              </tr>
-              <tr>
-                <td>1,000 - 1,249</td>
-                <td>80%</td>
-                <td>20% 
-                  <span class="badge badge-warning payout-status">WARNING</span>
-                </td>
-              </tr>
-              <tr>
-                <td>1,250 - 1,499</td>
-                <td>70%</td>
-                <td>30%
-                  <span class="badge badge-warning payout-status">WARNING</span>
-                </td>
-              </tr>
-              <tr>
-                <td>1,500 - 1,999</td>
-                <td>60%</td>
-                <td>40%</td>
-              </tr>
-              <tr>
-                <td>2,000 and above</td>
-                <td>50%</td>
-                <td>50%</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- regular -->
-          <h6><strong>REGULAR <small>(2nd payout onwards)</small></strong></h6>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>SLP Farmed<br/>(during snapshot)</th>
-                <th>Manager</th>
-                <th>Scholar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>below 1,000</td>
-                <td>100%</td>
-                <td>0 
-                  <span class="badge badge-danger payout-status">FORFEITED</span>
-                </td>
-              </tr>
-              <tr>
-                <td>1,000 - 1,499</td>
-                <td>80%</td>
-                <td>20% 
-                  <span class="badge badge-warning payout-status">WARNING</span>
-                </td>
-              </tr>
-              <tr>
-                <td>1,500 - 2,249</td>
-                <td>70%</td>
-                <td>30%
-                  <span class="badge badge-warning payout-status">WARNING</span>
-                </td>
-              </tr>
-              <tr>
-                <td>2,250 - 2,699</td>
-                <td>65%</td>
-                <td>35%</td>
-              </tr>
-              <tr>
-                <td>2,700 - 2,999</td>
-                <td>60%</td>
-                <td>40%</td>
-              </tr>
-              <tr>
-                <td>3,000 and above</td>
-                <td>50%</td>
-                <td>50%</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h6 class="pink-text pdT-10 pdB-10"><strong>SAMPLE COMPUTATION</strong></h6>
-          <b>PLAYER 1</b>
-          <div class="fs-14 row">
-            <div class="pdB-10 col-xs-12 col-sm-6">
-              <b class="pink-text">1st payout</b><br/>
-              Status: Probationary<br/>
-              Total farmed in 2 weeks: 2,500 <img src='img/slp.png' class='imgsize-icon'/><br/>
-              Claimable SLP: 2500 X .50 = 1,250 <img src='img/slp.png' class='imgsize-icon'/>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <b class="pink-text">2nd payout</b><br/>
-              Status: Regular<br/>
-              Total farmed in 2 weeks: 2,500 <img src='img/slp.png' class='imgsize-icon'/><br/>
-              Claimable SLP: 2500 X .35 = 875 <img src='img/slp.png' class='imgsize-icon'/>
-            </div>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- Game Info -->
-    <article class="mgB-20 pdB-20">
-      <div class="pd-20 mgB-20 sky-head header">Game Information</div>
-      <div class="container-fluid">
-        <div class="lightgray-cont br-4 pd-10">
-          <!-- Arena and Adventure -->
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#arena">Arena</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#adventure">Adventure</a>
-            </li>
-          </ul>
-          
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="arena">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>MMR</th>
-                    <th>SLP GAINED PER WIN</th>
-                  </tr>
-                </thead>
-                <tbody class="table-arena"></tbody>
-              </table>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="adventure">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>RUIN LEVEL</th>
-                    <th>SLP GAINED PER WIN</th>
-                  </tr>
-                </thead>
-                <tbody class="table-adventure"></tbody>
-              </table>
-              <div class="fs-12 pdB-20">
-                <b>Rewards</b><br/>
-                Defeating certain bosses in Adventure mode earns you one time SLP  rewards.
-                <ul>
-                  <li>Winning Level 21 = 200 <img src='img/slp.png' class='imgsize-icon'/></li>
-                  <li>Winning Level 36 = 300 <img src='img/slp.png' class='imgsize-icon'/></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="fs-12 pdB-20">
-            <p class="mg-0"><b>WITH ENERGY</b></p>
-            <ul>
-              <li>ADVENTURE = EXP & <img src='img/slp.png' class='imgsize-icon'/> (up to 100 max)</li>
-              <li>ARENA = MMR & <img src='img/slp.png' class='imgsize-icon'/></li>
-            </ul>
-
-            <p class="pdT-10 mg-0"><b>WITHOUT ENERGY</b></p>
-            <ul>
-              <li>ADVENTURE = <img src='img/slp.png' class='imgsize-icon'/> (up to 100 max)</li>
-              <li>ARENA = MMR</li>
-            </ul>
-          </div>
-
-          <p><b>AXIE DAMAGE BONUSES AND INTERACTIONS BETWEEN CLASSES</b></p>
-          <img src='img/axie-cycle.png' alt="axie-cycle" class="ban-img img-fluid">
-          <br/><br/>
-
-          <p class="pdT-10 mg-0"><b>USEFUL VIDEOS FOR BEGINNERS</b></p>
-          <ul>
-            <li><a href="https://youtu.be/wCzNGuraXn4">EXP and SLP Farming Guide</a></li>
-            <li><a href="https://youtu.be/RQuWyBFzzRE">Basic Battle Guide</a></li>
-          </ul>
-          <br/>
-
-          <p><b>SAMPLE BAN SCENARIOS</b></p>
-          <img src='img/ban.png' alt="ban-image" class="ban-img img-fluid">
-        </div>
-      </div>
-    </article>
-    
   </body>
 </html>
