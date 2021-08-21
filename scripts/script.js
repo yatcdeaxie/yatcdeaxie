@@ -88,18 +88,18 @@ $(document).ready(() => {
     let firstDate = new Date(); // get current date
     let secondDate = new Date(dateStarted);
     let diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-    return totalSlp/diffDays;
+    return (totalSlp/diffDays).toFixed();
   }
 
-  function getTotalSlpClaimable(aveSlp, totalSlp) {
+  function getTotalSlpClaimable(dailyAvg, totalSlp) {
     let slpClaimable = 0;
-    if (aveSlp >= 195) {
+    if (dailyAvg >= 195) {
       slpClaimable = totalSlp * .50;
-    } else if(aveSlp >= 165 && aveSlp < 194) {
+    } else if(dailyAvg >= 165 && dailyAvg <= 194) {
       slpClaimable = totalSlp * .45;
-    } else if(aveSlp >= 135 && aveSlp < 164) {
+    } else if(dailyAvg >= 135 && dailyAvg <= 164) {
       slpClaimable = totalSlp * .40;
-    } else if(aveSlp >= 75 && aveSlp < 134) {
+    } else if(dailyAvg >= 75 && dailyAvg <= 134) {
       slpClaimable = totalSlp * .35;
     } else {
       slpClaimable = totalSlp * 0;
@@ -110,11 +110,11 @@ $(document).ready(() => {
   function setAvgSlpBadgeColor(dailyAvg) {
     if (dailyAvg >= 195) {
       return 'badge-success';
-    } else if(dailyAvg >= 165 && dailyAvg < 194) {
+    } else if(dailyAvg >= 165 && dailyAvg <= 194) {
       return 'badge-info';
-    } else if(dailyAvg >= 135 && dailyAvg < 164) {
+    } else if(dailyAvg >= 135 && dailyAvg <= 164) {
       return 'badge-warning';
-    } else if(dailyAvg >= 75 && dailyAvg < 134) {
+    } else if(dailyAvg >= 75 && dailyAvg <= 134) {
       return 'badge-danger';
     } else {
       return 'badge-dark';
@@ -141,11 +141,11 @@ $(document).ready(() => {
     let fee = 0;
     if (aveSlp >= 195) {
       fee = '50';
-    } else if(aveSlp >= 165 && aveSlp < 194) {
+    } else if(aveSlp >= 165 && aveSlp <= 194) {
       fee = '55';
-    } else if(aveSlp >= 135 && aveSlp < 164) {
+    } else if(aveSlp >= 135 && aveSlp <= 164) {
       fee = '60';
-    } else if(aveSlp >= 75 && aveSlp < 134) {
+    } else if(aveSlp >= 75 && aveSlp <= 134) {
       fee = '65';
     } else {
       fee = '100';
@@ -159,7 +159,7 @@ $(document).ready(() => {
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
 
     $(`#wallet-player-name`).text(`${player.name}`);
-    $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay.toFixed()}`);
+    $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay}`);
     $(`#wallet-total-farmed-slp`).text(`${numberWithCommas(totalSlp.toFixed())}`);
     $(`#wallet-total-farmed-php`).text(`₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
     $(`#wallet-fee`).text(`(${playerFee}%)`);
@@ -190,7 +190,7 @@ $(document).ready(() => {
           <span class="claimable-slp">${numberWithCommas(claimableSlp)}</span>
         `);
         $(`#${playerId} .avg-slp`).replaceWith(`
-          <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay.toFixed()}  <img src='img/slp.png' class='slp-png'></span>
+          <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay}  <img src='img/slp.png' class='slp-png'></span>
         `);
         $(`#${playerId} .php-earned`).replaceWith(`
           <span class="php-earned badge badge-light mgT-3">₱${numberWithCommas(totalPhp.toFixed())}</span>`);
