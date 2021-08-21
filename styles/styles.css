@@ -40,22 +40,32 @@
   padding: .5rem;
 }
 
+/** Player Statistics */
 .table-players { margin-bottom: 0; }
 .payout-status { font-size: 11px; }
-
 .slp-container { text-align: center; font-size: 25px; }
-.php-earned { font-size: 12px; font-weight: normal; }
+.php-earned, .avg-slp, .player-mmr { font-size: 12px; font-weight: normal; }
 .percentage { color: var(--black-01); font-size: 12px; }
+.avg-slp, .player-mmr { width: auto; text-align: right; padding: 3px 5px; }
+
+/** Wallet */
+.wallet-header {
+  text-align: center;
+  font-weight: 700;
+}
+#wallet-avg-slp-per-day { font-weight: 700; }
+#wallet-player-name {
+  font-size: 20px;
+  font-weight: 700;
+}
 
 .nav-link.active {
   background-color: var(--gray) !important;
   color: var(--white) !important;
 }
-
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
     background-color: var(--gray-01);
 }
-
 .nav-link:not(.active) {
   border-color: var(--white);
   background-color: var(--gray-01);
@@ -77,12 +87,15 @@
 .pd-5 { padding: 5px; }
 .pd-10 { padding: 10px; }
 .pd-20 { padding: 20px; }
+.pdT-5 { padding-top: 5px; }
 .pdT-10 { padding-top: 10px; }
 .pdB-10 { padding-bottom: 10px; }
 .pdB-20 { padding-bottom: 20px; }
 
 /** Margin */
 .mg-0 { margin: 0; }
+.mgT-3 { margin-top: 3px; }
+.mgB-0 { margin-bottom: 0; }
 .mgB-20 { margin-bottom: 20px; }
 
 /** Font Size */
@@ -100,8 +113,18 @@
   height: 18px;
 }
 
+.slp-png {
+  width: 12px;
+  height: 12px;
+  vertical-align: bottom;
+}
+
 /** List */
 ul {
   padding-left: 20px;
   margin: 0;
+}
+
+.tAlign-right {
+  text-align: right;
 }

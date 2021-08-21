@@ -6,9 +6,8 @@ $(document).ready(() => {
   let validCredential = localStorage.getItem('credential');
 
   if (validCredential) {
-    let decodedPasscode = atob(validCredential);
-    loggedInPlayer = players.find(player => player.id === decodedPasscode);
-    console.log(loggedInPlayer);
+    loggedInPlayer = players.find(player => player.id === validCredential);
+    console.log('submit', loggedInPlayer);
     $('#body-container').show();
     $('.login-form').hide();
     getSlpPrice();
@@ -17,15 +16,15 @@ $(document).ready(() => {
   }
   
   $('#submit-passcode').click((e) => {
-    let passcode = document.getElementById("passcode").value;
+    let passcode = document.getElementById("passcode").value || '';
     let decodedPasscode = atob(passcode);
     loggedInPlayer = players.find(player => player.id === decodedPasscode);
-    console.log(loggedInPlayer);
+    console.log('sbumit2', loggedInPlayer);
     if (loggedInPlayer) {
       $('#passcode').removeClass("is-invalid");
       $('#passcode').get(0).setCustomValidity('');
       $('.login-form').hide();
-      localStorage.setItem("credential",passcode);
+      localStorage.setItem("credential",decodedPasscode);
       $('#body-container').show();
       e.preventDefault();
       getSlpPrice();
@@ -39,27 +38,24 @@ $(document).ready(() => {
     for (var i = 0; i < players.length; i++) {
       let player = players[i];
       getPlayerAxieInfo(player.id);
+      getPlayerArenaRanking(player.id);
       let playerTeam = setPlayerTeam(player.team);
       $(".table-body").append(
         `<tr id=${player.id}>
           <td>${player.name}<br>${playerTeam}
-          <td>
-            <div class="progress position-relative">
-              <div class="progress-bar" role="progressbar"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100">
-              <span class="total-slp">0</span> 
-              <span class="total-slp-width">(0.00%)</span>
-              </small>
-            </div>
+          <td style="text-align: right;">
+            <span class="player-mmr badge badge-dark">0</span>
+          <td style="text-align: right;">
+            <span class="avg-slp badge badge-dark">0</span>
           <td style="text-align: right;">
             <span class="claimable-slp">0</span>
-            <img src='img/slp.png' class='imgsize-icon'><br>
-            <span class="php-earned badge badge-warning">₱0.00</span>`);
+            <img src='img/slp.png' class='slp-png '><br>
+            <span class="php-earned badge badge-warning mgT-3">₱0.00</span>`);
     }
   }
 
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  function numberWithCommas(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   function sortPlayerByHighestSlp() {
@@ -71,8 +67,8 @@ $(document).ready(() => {
       rows = table.rows;
       for (i = 1; i < (rows.length - 1); i++) {
         shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[1].firstElementChild.getElementsByClassName("total-slp")[0];
-        y = rows[i + 1].getElementsByTagName("TD")[1].firstElementChild.getElementsByClassName("total-slp")[0];
+        x = rows[i].getElementsByTagName("TD")[2].getElementsByClassName("avg-slp")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[2].getElementsByClassName("avg-slp")[0];
         if (removeCommaFromNumber(x.innerHTML) < removeCommaFromNumber(y.innerHTML)) {
           shouldSwitch = true;
           break;
@@ -88,43 +84,41 @@ $(document).ready(() => {
     return parseInt(number.replace(/,/g,''));
   }
 
-  function getTotalSlpClaimable(status, totalSlp) {
+  function getAverageSlpPerDay(dateStarted, totalSlp) {
+    let oneDay = 24 * 60 * 60 * 1000; 
+    let firstDate = new Date(); // get current date
+    let secondDate = new Date(dateStarted);
+    let diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    return totalSlp/diffDays;
+  }
+
+  function getTotalSlpClaimable(aveSlp, totalSlp) {
     let slpClaimable = 0;
-    if (status === "probationary") {
-      if (totalSlp >= 2000) {
-        slpClaimable = totalSlp * .5;
-      } else if(totalSlp >= 1500 && totalSlp < 2000) {
-        slpClaimable = totalSlp * .4;
-      } else if(totalSlp >= 1250 && totalSlp < 1500) {
-        slpClaimable = totalSlp * .3;
-      } else if(totalSlp >= 1000 && totalSlp < 1250) {
-        slpClaimable = totalSlp * .2;
-      }
-    } else if (status === "regular") {
-      if (totalSlp >= 3000) {
-        slpClaimable = totalSlp * .5;
-      } else if(totalSlp >= 2700 && totalSlp < 3000) {
-        slpClaimable = totalSlp * .4;
-      } else if(totalSlp >= 2250 && totalSlp < 2700) {
-        slpClaimable = totalSlp * .35;
-      } else if(totalSlp >= 1500 && totalSlp < 2250) {
-        slpClaimable = totalSlp * .3;
-      } else if(totalSlp >= 1000 && totalSlp < 1500) {
-        slpClaimable = totalSlp * .2;
-      }
+    if (aveSlp >= 195) {
+      slpClaimable = totalSlp * .50;
+    } else if(aveSlp >= 165 && aveSlp < 194) {
+      slpClaimable = totalSlp * .45;
+    } else if(aveSlp >= 135 && aveSlp < 164) {
+      slpClaimable = totalSlp * .40;
+    } else if(aveSlp >= 75 && aveSlp < 134) {
+      slpClaimable = totalSlp * .35;
     } else {
-      slpClaimable = totalSlp;
+      slpClaimable = totalSlp * 0;
     }
     return slpClaimable.toFixed();
   }
 
-  function setProgressBarStatus(progressWidth) {
-    if (progressWidth < 50) {
-      return '#ff7070';
-    } else if(progressWidth < 100 && progressWidth >= 50) {
-      return '#f2f769';
+  function setAvgSlpBadgeColor(dailyAvg) {
+    if (dailyAvg >= 195) {
+      return 'badge-success';
+    } else if(dailyAvg >= 165 && dailyAvg < 194) {
+      return 'badge-info';
+    } else if(dailyAvg >= 135 && dailyAvg < 164) {
+      return 'badge-warning';
+    } else if(dailyAvg >= 75 && dailyAvg < 134) {
+      return 'badge-danger';
     } else {
-      return '#59f082';
+      return 'badge-dark';
     }
   }
 
@@ -136,6 +130,46 @@ $(document).ready(() => {
     return teamIcons.join("");
   }
 
+  function getFeeInSlp(playerFee, totalSlp) {
+    return (totalSlp * playerFee) / 100;
+  }
+
+  function getFeeInPhp(playerFee, totalSlp) {
+    return ((totalSlp * playerFee)/100) * slpPhPrice;
+  }
+
+  function getFee(aveSlp) {
+    let fee = 0;
+    if (aveSlp >= 195) {
+      fee = '50';
+    } else if(aveSlp >= 165 && aveSlp < 194) {
+      fee = '55';
+    } else if(aveSlp >= 135 && aveSlp < 164) {
+      fee = '60';
+    } else if(aveSlp >= 75 && aveSlp < 134) {
+      fee = '65';
+    } else {
+      fee = '100';
+    }
+    return fee;
+  }
+  
+  function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0) {
+    let playerFee = getFee(averageSlpPerDay) || 0;
+    let feeInSlp = getFeeInSlp(playerFee, totalSlp);
+    let feeInPhp = getFeeInPhp(playerFee, totalSlp);
+
+    $(`#wallet-player-name`).text(`${player.name}`);
+    $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay.toFixed()}`);
+    $(`#wallet-total-farmed-slp`).text(`${numberWithCommas(totalSlp.toFixed())}`);
+    $(`#wallet-total-farmed-php`).text(`₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
+    $(`#wallet-fee`).text(`(${playerFee}%)`);
+    $(`#wallet-fee-slp`).text(`-${numberWithCommas(feeInSlp.toFixed())}`);
+    $(`#wallet-fee-php`).text(`-₱${numberWithCommas(feeInPhp.toFixed())}`);
+    $(`#wallet-claimable-slp`).text(`${numberWithCommas(claimableSlp)}`);
+    $(`#wallet-claimable-php`).text(`₱${numberWithCommas(totalPhp.toFixed())}`);
+  }
+
   function getPlayerAxieInfo(id) {
     $.ajax({
       type: "GET",
@@ -144,27 +178,44 @@ $(document).ready(() => {
       success: function (result, status, xhr) {
         let playerId = result.client_id;
         let totalSlpCollected = result.total;
-        let slpRequired = 2250;
         let player = players.find((player) => player.id === playerId);
-        let claimableSlp = getTotalSlpClaimable(player.status, totalSlpCollected) || 0;
-        let progressWidth = ((totalSlpCollected/slpRequired) * 100).toFixed(2);
-        let progStatus = setProgressBarStatus(progressWidth);
+        let averageSlpPerDay = getAverageSlpPerDay(player.startDate, totalSlpCollected) || 0;
+        let avgSlpBadgeColor = setAvgSlpBadgeColor(averageSlpPerDay);
+        let claimableSlp = getTotalSlpClaimable(averageSlpPerDay, totalSlpCollected) || 0;
         let totalPhp = claimableSlp * slpPhPrice;
-        $(`#${playerId} .progress`).replaceWith(`
-          <div class="progress position-relative">
-            <div class="progress-bar" role="progressbar" style="width: ${progressWidth}%; background-color: ${progStatus}"></div>
-              <small class="percentage justify-content-center d-flex position-absolute w-100">
-                <span class="total-slp">${numberWithCommas(totalSlpCollected)}</span> 
-                <span class="total-slp-width">(${progressWidth}%)</span>
-              </small>
-            </div>
-          </div>
-          `);
+        if (playerId === loggedInPlayer.id) {
+          setPlayerWallet(player, totalSlpCollected, claimableSlp, totalPhp, averageSlpPerDay);
+        }
+
         $(`#${playerId} .claimable-slp`).replaceWith(`
           <span class="claimable-slp">${numberWithCommas(claimableSlp)}</span>
         `);
+        $(`#${playerId} .avg-slp`).replaceWith(`
+          <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay.toFixed()}  <img src='img/slp.png' class='slp-png'></span>
+        `);
         $(`#${playerId} .php-earned`).replaceWith(`
-          <span class="php-earned badge badge-warning">₱${numberWithCommas(totalPhp.toFixed(2))}</span>`);
+          <span class="php-earned badge badge-light mgT-3">₱${numberWithCommas(totalPhp.toFixed())}</span>`);
+      },
+      error: function (xhr, status, error) {
+        console.log(`${xhr.status} ${xhr.statusText}`);
+      }
+    });
+  }
+
+  function getPlayerArenaRanking(id) {
+    let roninAdd = id.substring(2);
+    $.ajax({
+      type: "GET",
+      url: `https://axie-infinity.p.rapidapi.com/get-slp/ronin:${roninAdd}`,
+      headers: {
+        'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
+        'x-rapidapi-key': '64776f09f3msh04aaad33770abefp150684jsn6766ed1262e0'
+      },
+      method: "GET",
+      dataType: "json",
+      success: function (result, status, xhr) {
+        $(`#${id} .player-mmr`).replaceWith(`
+          <span class="player-mmr badge badge-light">${numberWithCommas(result?.leaderboardData?.elo)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
