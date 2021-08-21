@@ -6,8 +6,8 @@ $(document).ready(() => {
   let validCredential = localStorage.getItem('credential');
 
   if (validCredential) {
-    loggedInPlayer = players.find(player => player.id === validCredential);
-    console.log('submit', loggedInPlayer);
+    let decodedPasscode = atob(validCredential)
+    loggedInPlayer = players.find(player => player.id === decodedPasscode);
     $('#body-container').show();
     $('.login-form').hide();
     getSlpPrice();
@@ -19,12 +19,11 @@ $(document).ready(() => {
     let passcode = document.getElementById("passcode").value || '';
     let decodedPasscode = atob(passcode);
     loggedInPlayer = players.find(player => player.id === decodedPasscode);
-    console.log('sbumit2', loggedInPlayer);
     if (loggedInPlayer) {
       $('#passcode').removeClass("is-invalid");
       $('#passcode').get(0).setCustomValidity('');
       $('.login-form').hide();
-      localStorage.setItem("credential",decodedPasscode);
+      localStorage.setItem("credential", passcode);
       $('#body-container').show();
       e.preventDefault();
       getSlpPrice();
