@@ -39,8 +39,9 @@ $(document).ready(() => {
       getPlayerAxieInfo(player.id);
       getPlayerArenaRanking(player.id);
       let playerTeam = setPlayerTeam(player.team);
+      let activeRow = loggedInPlayer.id === player.id ? 'active-row' : '';
       $(".table-body").append(
-        `<tr id=${player.id}>
+        `<tr id=${player.id} class="${activeRow}">
           <td>${player.name}<br>${playerTeam}
           <td style="text-align: right;">
             <span class="player-mmr badge badge-dark">0</span>
@@ -160,11 +161,14 @@ $(document).ready(() => {
 
     $(`#wallet-player-name`).text(`${player.name}`);
     $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay}`);
+
     $(`#wallet-total-farmed-slp`).text(`${numberWithCommas(totalSlp.toFixed())}`);
     $(`#wallet-total-farmed-php`).text(`₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
+
     $(`#wallet-fee`).text(`(${playerFee}%)`);
     $(`#wallet-fee-slp`).text(`-${numberWithCommas(feeInSlp.toFixed())}`);
     $(`#wallet-fee-php`).text(`-₱${numberWithCommas(feeInPhp.toFixed())}`);
+
     $(`#wallet-claimable-slp`).text(`${numberWithCommas(claimableSlp)}`);
     $(`#wallet-claimable-php`).text(`₱${numberWithCommas(totalPhp.toFixed())}`);
   }
