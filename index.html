@@ -62,12 +62,29 @@
       <article class="mgB-20">
         <div class="pd-20 mgB-20 sky-head header">Player Statistics</div>
         <div class="container-fluid">
-          <div class="pdB-20 white-text slp-container">
-            SLP CURRENT PRICE:
-            <span class="badge badge-warning">
-              ₱<span class="slp-price" id="slp"></span>
-            </span>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="pdB-20 white-text slp-container">
+                  <div class="fs-12 pdB-10">SLP PRICE</div>
+                  <div class="badge badge-warning  w-70 fs-20">
+                    ₱<span class="slp-price" id="slp"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="pdB-20 white-text slp-container">
+                  <div class="fs-12 pdB-10">PLAYER RANK</div>
+                  <div class="badge badge-warning w-70 fs-20" id="player-ranking">
+                    0
+                  </div>
+                  <div class="fs-12">out of <span id="total-player"></span></div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Player Table -->
           <div class="table-responsive">
             <table class="table table-dark table-players" id="player-list">
               <thead>
@@ -87,9 +104,9 @@
       <!-- SLP Wallet -->
       <article class="mgB-20">
         <div class="container-fluid">
-          <div class="lightgray-cont br-4 pd-10">
+          <div class="lightgray-cont br-8 pd-10">
             <span id="wallet-player-name" class="fs-14"></span>
-            <div class="fs-12">Average SLP per Day :
+            <div class="fs-12 pdB-10">Average SLP per Day :
               <span id="wallet-avg-slp-per-day"></span>
             </div>
             <div class="wallet-header fs-12">MY WALLET</div>
@@ -117,8 +134,8 @@
                   </tr>
                   <tr>
                     <td><strong>PAYOUT</strong></td>
-                    <td id="wallet-claimable-slp" class="tAlign-right">0</td>
-                    <td id="wallet-claimable-php" class="tAlign-right">₱0</td>
+                    <td id="wallet-claimable-slp" class="tAlign-right fw-700">0</td>
+                    <td id="wallet-claimable-php" class="tAlign-right fw-700">₱0</td>
                   </tr>
                 </tbody>
               </table>
@@ -131,7 +148,7 @@
       <article class="mgB-20 pdB-20" id="payout">
         <div class="pd-20 mgB-20 sky-head header">Payout Information</div>
         <div class="container-fluid">
-          <div class="lightgray-cont br-4 pd-10">
+          <div class="lightgray-cont br-8 pd-10">
             <div class="pink-text"><strong>Effective: August 16, 2021</strong></div>
             <ul class="fs-14">
               <li>SNAPSHOT OF SLP WILL BE TAKEN ON EVERY 15TH AND END OF THE MONTH BY 8:00 PM. 
@@ -159,31 +176,31 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>below 75</td>
-                  <td>100%</td>
-                  <td>0 
-                    <span class="badge badge-danger payout-status">FORFEITED</span>
-                  </td>
+                  <td><span class="badge badge-success fs-12">195 and above</span></td>
+                  <td>50%</td>
+                  <td>50%</td>
                 </tr>
                 <tr>
-                  <td>75 - 134</td>
-                  <td>65%</td>
-                  <td>35%</td>
-                </tr>
-                <tr>
-                  <td>135 - 164</td>
-                  <td>60%</td>
-                  <td>40%</td>
-                </tr>
-                <tr>
-                  <td>165 - 194</td>
+                  <td><span class="badge badge-info fs-12">165 - 194</span></td>
                   <td>55%</td>
                   <td>45%</td>
                 </tr>
                 <tr>
-                  <td>195 and above</td>
-                  <td>50%</td>
-                  <td>50%</td>
+                  <td><span class="badge badge-warning fs-12">135 - 164</span></td>
+                  <td>60%</td>
+                  <td>40%</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-danger fs-12">75 - 134</span></td>
+                  <td>65%</td>
+                  <td>35%</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-dark fs-12">below 75</span></td>
+                  <td>100%</td>
+                  <td>0 
+                    <span class="badge badge-dark payout-status">FORFEITED</span>
+                  </td>
                 </tr>
               </tbody>
             </table>

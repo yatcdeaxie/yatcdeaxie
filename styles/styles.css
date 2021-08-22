@@ -49,6 +49,7 @@
 .percentage { color: var(--black-01); font-size: 12px; }
 .avg-slp, .player-mmr { width: auto; text-align: right; padding: 3px 5px; }
 .active-row { background-color: var(--dark-gray); }
+
 /** Wallet */
 .wallet-header {
   text-align: center;
@@ -60,23 +61,13 @@
   font-weight: 700;
 }
 
-.nav-link.active {
-  background-color: var(--gray) !important;
-  color: var(--white) !important;
-}
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    background-color: var(--gray-01);
-}
-.nav-link:not(.active) {
-  border-color: var(--white);
-  background-color: var(--gray-01);
-  color: var(--black-01) !important;
-}
-
 /** Header */
 .g-head { background-color: var(--blue-green-lighter); }
 .sky-head { background-color: var(--sky-blue); }
 .p-head { background-color: var(--carnation-pink); }
+
+/** Width */
+.w-70 { width: 70px; }
 
 /** Color */
 .white-text { color: var(--white); }
@@ -103,10 +94,12 @@
 .fs-12 { font-size: 12px; }
 .fs-13 { font-size: 13px; }
 .fs-14 { font-size: 14px; }
+.fs-20 { font-size: 20px; }
+.fw-700 { font-weight: 700; }
 
-.br-upper { border-radius: 4px 4px 0 0; }
-.br-bottom { border-radius: 0 0 4px 4px; }
-.br-4 { border-radius: 4px; }
+.br-upper { border-radius: 8px 8px 0 0; }
+.br-bottom { border-radius: 0 0 8px 8px; }
+.br-8 { border-radius: 8px; }
 
 /** Image */
 .imgsize-icon {

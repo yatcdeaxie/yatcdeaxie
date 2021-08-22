@@ -34,6 +34,7 @@ $(document).ready(() => {
   });
 
   function createPlayersTable() {
+    $("#total-player").text(players.length);
     for (var i = 0; i < players.length; i++) {
       let player = players[i];
       getPlayerAxieInfo(player.id);
@@ -73,6 +74,9 @@ $(document).ready(() => {
           shouldSwitch = true;
           break;
         }
+        if (i === rows.length-2) {
+          getPlayerRank();
+        }
       }
       if (shouldSwitch) {
         rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
@@ -80,16 +84,25 @@ $(document).ready(() => {
       }
     }
   }
+
+  function getPlayerRank() {
+    let playerId = loggedInPlayer.id;
+    let ranking = $(`#${playerId}`)[0].rowIndex;
+    $(`#player-ranking`).text(`${ranking}`);
+  }
+
   function removeCommaFromNumber(number) {
     return parseInt(number.replace(/,/g,''));
   }
 
   function getAverageSlpPerDay(dateStarted, totalSlp) {
-    let oneDay = 24 * 60 * 60 * 1000; 
     let firstDate = new Date(); // get current date
-    let secondDate = new Date(dateStarted);
-    let diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-    return (totalSlp/diffDays).toFixed();
+    let currentHour = firstDate.getHours();
+    let axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
+    let scholarStartDate = new Date(dateStarted);
+    let diffDays = (axieResetDate.getDate() - scholarStartDate.getDate());
+    let avgSlp = totalSlp/diffDays || 0;
+    return avgSlp.toFixed();
   }
 
   function getTotalSlpClaimable(dailyAvg, totalSlp) {
@@ -234,9 +247,9 @@ $(document).ready(() => {
       success: function (result, status, xhr) {
         var slpPrice = $(".slp-price");
         let slp = Object.values(result).find((slp) => slp.php);
-        slpPhPrice = slp.php;
+        slpPhPrice = slp.php.toFixed(2);
         slpPrice.append(`${slpPhPrice}`);
-        $("slp").html(slpPrice);
+        $("slp").text(slpPrice);
         createPlayersTable();
       },
       error: function (xhr, status, error) {
