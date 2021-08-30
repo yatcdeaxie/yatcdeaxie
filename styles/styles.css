@@ -45,9 +45,9 @@
 .table-players { margin-bottom: 0; }
 .payout-status { font-size: 11px; }
 .slp-container { text-align: center; font-size: 25px; }
-.php-earned, .avg-slp, .player-mmr { font-size: 12px; font-weight: normal; }
+.php-earned, .avg-slp, .player-mmr, .player-ranking, .claimable-slp, .fee-player, .fee-player-php { font-size: 12px; font-weight: normal; }
 .percentage { color: var(--black-01); font-size: 12px; }
-.avg-slp, .player-mmr { width: auto; text-align: right; padding: 3px 5px; }
+.avg-slp, .player-mmr, .fee-player, .fee-player-php { width: auto; text-align: right; padding: 3px 5px; }
 .active-row { background-color: var(--dark-gray); }
 
 /** Wallet */

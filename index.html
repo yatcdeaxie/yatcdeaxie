@@ -84,19 +84,33 @@
             </div>
           </div>
 
+          <!-- Arena and Adventure -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active slp-earned" data-toggle="tab" href="#slp-earned">SLP EARNED</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link arena" data-toggle="tab" href="#slp-earned">ARENA</a>
+            </li>
+          </ul>
           <!-- Player Table -->
-          <div class="table-responsive">
-            <table class="table table-dark table-players" id="player-list">
-              <thead>
-                <tr>
-                  <th style="width: 25%;">PLAYER</th>
-                  <th style="width: 25%; text-align: right;">MMR</th>
-                  <th style="width: 25%; text-align: right;">DAILY<BR>AVG.</th>
-                  <th style="width: 25%; text-align: right;">CLAIMABLE<BR>SLP</th>
-                </tr>
-              </thead>
-              <tbody class="table-body"></tbody>
-            </table>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="slp-earned">
+              <div class="table-responsive">
+                <table class="table table-dark table-players" id="player-list">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%;">PLAYER</th>
+                      <th style="width: 25%; text-align: right; display: none" class="mmr">MMR</th>
+                      <th style="width: 25%; text-align: right; display: none" class="ranking">RANKING</th>
+                      <th style="width: 25%; text-align: right;" class="daily-avg">DAILY<BR>AVG.</th>
+                      <th style="width: 25%; text-align: right;" class="claimableSlp">CLAIMABLE<BR>SLP</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </article>
