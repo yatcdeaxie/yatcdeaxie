@@ -40,13 +40,13 @@ var playersList =
   {
     id: "0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f",
     name: "Araykupo",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "plant", "aqua"],
     startDate: "Aug 23 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
     name: "TakQuiz",
-    team: ["plant", "aqua", "beast"],
+    team: ["plant", "reptile", "beast"],
     startDate: "Aug 21 2021 08:00:00 GMT+0800"
   },
   {
