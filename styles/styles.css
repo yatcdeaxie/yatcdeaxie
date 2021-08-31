@@ -50,6 +50,18 @@
 .avg-slp, .player-mmr, .fee-player, .fee-player-php { width: auto; text-align: right; padding: 3px 5px; }
 .active-row { background-color: var(--dark-gray); }
 
+.nav-link {
+  color: var(--white);
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+.nav-link.acttive {
+  color: var(--black);
+}
+
 /** Wallet */
 .wallet-header {
   text-align: center;

@@ -3,7 +3,6 @@ $(document).ready(() => {
   var players = playersList;
   let slpPhPrice = 0
   let loggedInPlayer;
-  let activeTab;
   let validCredential = localStorage.getItem('credential');
 
   if (validCredential) {
@@ -158,7 +157,7 @@ $(document).ready(() => {
     let currentHour = firstDate.getHours();
     let axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
     let scholarStartDate = new Date(dateStarted);
-    let diffDays = (axieResetDate.getDate() - scholarStartDate.getDate());
+    let diffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
     let avgSlp = totalSlp/diffDays || 0;
     return avgSlp.toFixed();
   }
