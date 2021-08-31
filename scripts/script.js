@@ -157,7 +157,8 @@ $(document).ready(() => {
     let currentHour = firstDate.getHours();
     let axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
     let scholarStartDate = new Date(dateStarted);
-    let diffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
+    let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
+    let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays;
     let avgSlp = totalSlp/diffDays || 0;
     return avgSlp.toFixed();
   }
@@ -208,6 +209,10 @@ $(document).ready(() => {
     return ((totalSlp * playerFee)/100) * slpPhPrice;
   }
 
+  function getUnclaimedInPhp(unclaimedSlp) {
+    return unclaimedSlp * slpPhPrice;
+  }
+
   function getFee(aveSlp) {
     let fee = 0;
     if (aveSlp >= 195) {
@@ -224,23 +229,29 @@ $(document).ready(() => {
     return fee;
   }
   
-  function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0) {
+  function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0, unclaimedSlp = 0) {
     let playerFee = getFee(averageSlpPerDay) || 0;
     let feeInSlp = getFeeInSlp(playerFee, totalSlp);
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
+    let unclaimedSlpInPhp = getUnclaimedInPhp(unclaimedSlp);
+    let claimableSlpInSlp = +claimableSlp + unclaimedSlp;
+    let claimableSlpInPhp = unclaimedSlpInPhp + +totalPhp;
 
     $(`#wallet-player-name`).text(`${player.name}`);
     $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay}`);
 
-    $(`#wallet-total-farmed-slp`).text(`${numberWithCommas(totalSlp.toFixed())}`);
-    $(`#wallet-total-farmed-php`).text(`₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
+    $(`#wallet-total-farmed-slp`).text(`+${numberWithCommas(totalSlp.toFixed())}`);
+    $(`#wallet-total-farmed-php`).text(`+₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
 
     $(`#wallet-fee`).text(`(${playerFee}%)`);
     $(`#wallet-fee-slp`).text(`-${numberWithCommas(feeInSlp.toFixed())}`);
     $(`#wallet-fee-php`).text(`-₱${numberWithCommas(feeInPhp.toFixed())}`);
 
-    $(`#wallet-claimable-slp`).text(`${numberWithCommas(claimableSlp)}`);
-    $(`#wallet-claimable-php`).text(`₱${numberWithCommas(totalPhp.toFixed())}`);
+    $(`#wallet-unclaimed-slp`).text(`+${numberWithCommas(unclaimedSlp.toFixed())}`);
+    $(`#wallet-unclaimed-php`).text(`+₱${numberWithCommas(unclaimedSlpInPhp.toFixed())}`);
+
+    $(`#wallet-claimable-slp`).text(`${numberWithCommas(claimableSlpInSlp)}`);
+    $(`#wallet-claimable-php`).text(`₱${numberWithCommas(claimableSlpInPhp.toFixed())}`);
   }
 
   function getPlayerAxieInfo(id) {
@@ -250,17 +261,20 @@ $(document).ready(() => {
       dataType: "json",
       success: function (result, status, xhr) {
         let playerId = result.client_id;
-        let totalSlpCollected = result.total;
         let player = players.find((player) => player.id === playerId);
+        let unclaimedSlp = player.unclaimedSlp;
+        let totalFarmedPrevCutoff = player.totalFarmedPrevCutoff;
+        let totalFarmed = result.total || 0;
+        let totalSlpCollected = totalFarmed - totalFarmedPrevCutoff;
         let averageSlpPerDay = getAverageSlpPerDay(player.startDate, totalSlpCollected) || 0;
         let avgSlpBadgeColor = setAvgSlpBadgeColor(averageSlpPerDay);
         let claimableSlp = getTotalSlpClaimable(averageSlpPerDay, totalSlpCollected) || 0;
-        let totalPhp = claimableSlp * slpPhPrice;
+        let totalPhp = (claimableSlp * slpPhPrice).toFixed();
         let fee = getFee(averageSlpPerDay) || 0;
-        let playerFeeSlp = (totalSlpCollected * fee)/100;
-        let playerFeePhp = playerFeeSlp * slpPhPrice;
+        let playerFeeSlp = ((totalSlpCollected * fee)/100).toFixed();
+        let playerFeePhp = (playerFeeSlp * slpPhPrice).toFixed();
         if (playerId === loggedInPlayer.id) {
-          setPlayerWallet(player, totalSlpCollected, claimableSlp, totalPhp, averageSlpPerDay);
+          setPlayerWallet(player, totalSlpCollected, claimableSlp, totalPhp, averageSlpPerDay, unclaimedSlp);
         }
         let activePlayerAdmin = loggedInPlayer.id === '0xe93f2622be726d62c371a0589a47d2da8c683f9d';
         let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
@@ -272,13 +286,13 @@ $(document).ready(() => {
           <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay}  <img src='img/slp.png' class='slp-png'></span>
         `);
         $(`#${playerId} .php-earned`).replaceWith(`
-          <span class="php-earned badge badge-light mgT-3" style="${feeDisplay}">₱${numberWithCommas(totalPhp.toFixed())}</span>`);
+          <span class="php-earned badge badge-light mgT-3" style="${feeDisplay}">₱${numberWithCommas(totalPhp)}</span>`);
 
         $(`#${playerId} .fee-player`).replaceWith(`
-          <span class="fee-player badge badge-warning mgT-3" style="${feeDisplay}">${numberWithCommas(playerFeeSlp.toFixed())} <img src='img/slp.png' class='slp-png'></span>`);
+          <span class="fee-player badge badge-warning mgT-3" style="${feeDisplay}">${numberWithCommas(playerFeeSlp)} <img src='img/slp.png' class='slp-png'></span>`);
 
         $(`#${playerId} .fee-player-php`).replaceWith(`
-          <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱${numberWithCommas(playerFeePhp.toFixed())}</span>`);
+          <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱${numberWithCommas(playerFeePhp)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
