@@ -53,8 +53,8 @@ var playersList =
     id: "0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f",
     name: "Araykupo",
     team: ["plant", "plant", "aqua"],
-    totalFarmedPrevCutoff: 1342,
-    unclaimedSlp: 537,
+    totalFarmedPrevCutoff: 1537,
+    unclaimedSlp: 769,
     startDate: "Sept 1 2021 08:00:00 GMT+0800"
   },
   {
