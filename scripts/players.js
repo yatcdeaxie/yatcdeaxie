@@ -2,8 +2,7 @@ var playersList =
 [
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "Yatcde",
-    status: "boss",
+    name: "Jiz",
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -19,8 +18,8 @@ var playersList =
   },
   {
     id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
-    name: "Jiz",
-    team: ["plant", "aqua", "aqua"],
+    name: "Trololol",
+    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Sept 1 2021 08:00:00 GMT+0800"
@@ -75,8 +74,8 @@ var playersList =
   },
   {
     id: "0x00a1e039c77a8a5f51e47567e59c40780d7a8c47",
-    name: "Trololol",
-    team: ["plant", "reptile", "beast"],
+    name: "Monay",
+    team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Sept 1 2021 08:00:00 GMT+0800"

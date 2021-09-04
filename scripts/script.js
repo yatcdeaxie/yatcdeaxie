@@ -63,7 +63,7 @@ $(document).ready(() => {
         $(".mmr").css('display', 'none');
         $(".ranking").css('display', 'none');
       }
-      let activePlayerAdmin = loggedInPlayer.id === '0xe93f2622be726d62c371a0589a47d2da8c683f9d';
+      let activePlayerAdmin = loggedInPlayer.id === '0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f';
       let addBr = activePlayerAdmin ? '<br/>' : '';
       let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
       $(".table-body").append(
@@ -276,7 +276,7 @@ $(document).ready(() => {
         if (playerId === loggedInPlayer.id) {
           setPlayerWallet(player, totalSlpCollected, claimableSlp, totalPhp, averageSlpPerDay, unclaimedSlp);
         }
-        let activePlayerAdmin = loggedInPlayer.id === '0xe93f2622be726d62c371a0589a47d2da8c683f9d';
+        let activePlayerAdmin = loggedInPlayer.id === '0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f';
         let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
 
         $(`#${playerId} .claimable-slp`).replaceWith(`
@@ -303,7 +303,7 @@ $(document).ready(() => {
   function getPlayerArenaRanking(id) {
     $.ajax({
       type: "GET",
-      url: `https://axie-infinity.p.rapidapi.com/get-slp/${id}`,
+      url: `https://axie-infinity.p.rapidapi.com/get-final-data/${id}`,
       headers: {
         'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
         'x-rapidapi-key': '64776f09f3msh04aaad33770abefp150684jsn6766ed1262e0'
@@ -312,10 +312,10 @@ $(document).ready(() => {
       dataType: "json",
       success: function (result, status, xhr) {
         $(`#${id} .player-mmr`).replaceWith(`
-          <span class="player-mmr badge badge-light">${numberWithCommas(result?.mmr)}</span>`);
+          <span class="player-mmr badge badge-light">${numberWithCommas(result?.walletData.pvpData.elo)}</span>`);
 
         $(`#${id} .player-ranking`).replaceWith(`
-          <span class="player-ranking badge badge-light">${numberWithCommas(result?.rank)}</span>`);
+          <span class="player-ranking badge badge-light">${numberWithCommas(result?.walletData.pvpData.rank)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
