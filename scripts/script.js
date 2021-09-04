@@ -157,8 +157,9 @@ $(document).ready(() => {
     let currentHour = firstDate.getHours();
     let axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
     let scholarStartDate = new Date(dateStarted);
-    let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
-    let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays;
+    // let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
+    let diffDays = (axieResetDate.getDate() - scholarStartDate.getDate())
+    // let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays;
     let avgSlp = totalSlp/diffDays || 0;
     return avgSlp.toFixed();
   }
