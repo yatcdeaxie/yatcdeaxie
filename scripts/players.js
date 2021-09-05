@@ -79,6 +79,6 @@ var playersList =
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Sept 1 2021 08:00:00 GMT+0800"
+    startDate: "Sept 6 2021 08:00:00 GMT+0800"
   }
 ]
