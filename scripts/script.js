@@ -265,7 +265,8 @@ $(document).ready(() => {
         let player = players.find((player) => player.id === playerId);
         let unclaimedSlp = player.unclaimedSlp;
         let totalFarmedPrevCutoff = player.totalFarmedPrevCutoff;
-        let totalFarmed = result.total || 0;
+        let deductedSlp = player?.deductedSlp || 0;
+        let totalFarmed = (result.total - deductedSlp) || 0;
         let totalSlpCollected = totalFarmed - totalFarmedPrevCutoff;
         let averageSlpPerDay = getAverageSlpPerDay(player.startDate, totalSlpCollected) || 0;
         let avgSlpBadgeColor = setAvgSlpBadgeColor(averageSlpPerDay);
