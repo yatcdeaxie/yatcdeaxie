@@ -4,6 +4,7 @@ $(document).ready(() => {
   let slpPhPrice = 0
   let loggedInPlayer;
   let validCredential = localStorage.getItem('credential');
+  let axieResetDate;
 
   if (validCredential) {
     let decodedPasscode = atob(validCredential)
@@ -155,7 +156,7 @@ $(document).ready(() => {
   function getAverageSlpPerDay(dateStarted, totalSlp) {
     let firstDate = new Date(); // get current date
     let currentHour = firstDate.getHours();
-    let axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
+    axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
     let scholarStartDate = new Date(dateStarted);
     // let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
     let diffDays = (axieResetDate.getDate() - scholarStartDate.getDate())
@@ -232,6 +233,7 @@ $(document).ready(() => {
   
   function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0, unclaimedSlp = 0) {
     let playerFee = getFee(averageSlpPerDay) || 0;
+    let diffDays = (axieResetDate.getDate() - new Date(player.startDate).getDate())
     let feeInSlp = getFeeInSlp(playerFee, totalSlp);
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
     let unclaimedSlpInPhp = getUnclaimedInPhp(unclaimedSlp);
@@ -240,6 +242,8 @@ $(document).ready(() => {
 
     $(`#wallet-player-name`).text(`${player.name}`);
     $(`#wallet-avg-slp-per-day`).text(`${averageSlpPerDay}`);
+    $(`#wallet-farming-days`).text(`${diffDays}`);
+    $(`#wallet-start-date`).text(`${new Date(player.startDate).toLocaleDateString()}`);
 
     $(`#wallet-total-farmed-slp`).text(`+${numberWithCommas(totalSlp.toFixed())}`);
     $(`#wallet-total-farmed-php`).text(`+₱${numberWithCommas((totalSlp * slpPhPrice).toFixed())}`);
@@ -345,7 +349,7 @@ $(document).ready(() => {
     });
   }
 
-  $(document).ajaxStop(function() {
+  $(document).ajaxStop(() => {
     sortPlayerByHighestSlp();
   });
 });

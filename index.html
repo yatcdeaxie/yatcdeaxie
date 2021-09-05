@@ -43,24 +43,8 @@
     </div>
 
     <div id="body-container">
-      <!-- Announcements-->
-      <article class="mgB-20">
-        <div class="container-fluid">
-          <div class="announcement-header pd-10 br-upper">
-            <h5 class="white-text mg-0">Announcements</h5>
-          </div>
-          <div class="pd-10 announcement-content br-bottom">
-            NO ANNOUNCEMENT YET
-            <!-- <ul class="fs-14">
-              <li></li>
-            </ul> -->
-          </div>
-        </div>
-      </article>
-
       <!-- Player Statistics -->
       <article class="mgB-20">
-        <div class="pd-20 mgB-20 sky-head header">Player Statistics</div>
         <div class="container-fluid">
           <div class="container">
             <div class="row">
@@ -120,8 +104,11 @@
         <div class="container-fluid">
           <div class="lightgray-cont br-8 pd-10">
             <span id="wallet-player-name" class="fs-14"></span>
-            <div class="fs-12 pdB-10">Average SLP per Day :
+            <div class="fs-12">Average SLP in <span id="wallet-farming-days"></span> Days :
               <span id="wallet-avg-slp-per-day"></span>
+            </div>
+            <div class="fs-12 pdB-10">Start Date: 
+              <span id="wallet-start-date"></span>
             </div>
             <div class="wallet-header fs-12">MY WALLET</div>
             <div class="table-responsive">
@@ -188,7 +175,7 @@
             <table class="table table-hover mB-0">
               <thead>
                 <tr>
-                  <th>SLP Farmed per Day</br/>(during snapshot)</th>
+                  <th>AVG SLP</th>
                   <th>Manager</th>
                   <th>Scholar</th>
                 </tr>
