@@ -80,5 +80,29 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Sept 6 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x9e441983480745a4d4bf4499e0a84f01648104e5",
+    name: "Mellow Whiskey",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 6 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
+    name: "Okpy",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 6 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
+    name: "Chicklet",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 6 2021 08:00:00 GMT+0800"
   }
-]
+] 
