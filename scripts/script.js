@@ -78,11 +78,9 @@ $(document).ready(() => {
             <span class="avg-slp badge badge-dark">0</span>
           <td style="text-align: right;" class="claimableSlp">
             <span class="claimable-slp">0</span>
-            ${addBr}
             <span class="php-earned badge badge-light mgT-3" style="${feeDisplay}">₱0.00</span>
             ${addBr}
             <span class="fee-player badge badge-warning mgT-3" style="${feeDisplay}">0</span>
-            ${addBr}
             <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱0.00</span>`);
     }
   }
