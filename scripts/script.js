@@ -152,13 +152,12 @@ $(document).ready(() => {
   }
 
   function getAverageSlpPerDay(dateStarted, totalSlp) {
-    let firstDate = new Date(); // get current date
-    let currentHour = firstDate.getHours();
-    axieResetDate = currentHour >=8 ? new Date(firstDate.setDate(firstDate.getDate() + 1)) : firstDate;
+    let currentDate = new Date(); // get current date
+    let currentHour = currentDate.getHours(); // get current hour
+    axieResetDate = currentHour >=8 ? new Date(currentDate.setDate(currentDate.getDate() + 1)) : currentDate;
     let scholarStartDate = new Date(dateStarted);
-    // let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
-    let diffDays = (axieResetDate.getDate() - scholarStartDate.getDate())
-    // let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays;
+    let convertDiffDays = (axieResetDate.getDate() - scholarStartDate.getDate())
+    let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays; // if date difference is less than or equal to 0 set default diff days to 1, else get diffdays
     let avgSlp = totalSlp/diffDays || 0;
     return avgSlp.toFixed();
   }
@@ -171,8 +170,10 @@ $(document).ready(() => {
       slpClaimable = totalSlp * .45;
     } else if(dailyAvg >= 135 && dailyAvg <= 164) {
       slpClaimable = totalSlp * .40;
-    } else if(dailyAvg >= 75 && dailyAvg <= 134) {
+    } else if(dailyAvg >= 105 && dailyAvg <= 134) {
       slpClaimable = totalSlp * .35;
+    } else if(dailyAvg >= 75 && dailyAvg <= 104) {
+      slpClaimable = totalSlp * .30;
     } else {
       slpClaimable = totalSlp * 0;
     }
@@ -186,8 +187,10 @@ $(document).ready(() => {
       return 'badge-info';
     } else if(dailyAvg >= 135 && dailyAvg <= 164) {
       return 'badge-warning';
-    } else if(dailyAvg >= 75 && dailyAvg <= 134) {
+    } else if(dailyAvg >= 105 && dailyAvg <= 134) {
       return 'badge-danger';
+    } else if(dailyAvg >= 75 && dailyAvg <= 104) {
+      return 'badge-secondary';
     } else {
       return 'badge-dark';
     }
@@ -221,8 +224,10 @@ $(document).ready(() => {
       fee = '55';
     } else if(aveSlp >= 135 && aveSlp <= 164) {
       fee = '60';
-    } else if(aveSlp >= 75 && aveSlp <= 134) {
+    } else if(aveSlp >= 105 && aveSlp <= 134) {
       fee = '65';
+    } else if(aveSlp >= 75 && aveSlp <= 104) {
+      fee = '70';
     } else {
       fee = '100';
     }
