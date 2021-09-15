@@ -87,7 +87,7 @@ var playersList =
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Sept 6 2021 08:00:00 GMT+0800"
+    startDate: "Sept 15 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
@@ -95,7 +95,7 @@ var playersList =
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Sept 6 2021 08:00:00 GMT+0800"
+    startDate: "Sept 15 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
