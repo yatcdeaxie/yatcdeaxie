@@ -85,8 +85,8 @@ var playersList =
     id: "0x9e441983480745a4d4bf4499e0a84f01648104e5",
     name: "Mellow Whiskey",
     team: ["plant", "aqua", "aqua"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
+    totalFarmedPrevCutoff: 76,
+    unclaimedSlp: 23,
     startDate: "Sept 16 2021 08:00:00 GMT+0800"
   },
   {
