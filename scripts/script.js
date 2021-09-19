@@ -60,6 +60,8 @@ $(document).ready(() => {
       let activeRow = loggedInPlayer.id === player.id ? 'active-row' : '';
       let activeTabIsSlpEarned = $("a.nav-link.active.slp-earned").length === 1;
       let hidemmrdetails = activeTabIsSlpEarned ? 'display: none;' : '';
+      let roninAddMarketPlace = player.id.substring(2);
+      let marketPlaceLink = `https://marketplace.axieinfinity.com/profile/ronin:${roninAddMarketPlace}/axie`;
       if (activeTabIsSlpEarned) {
         $(".mmr").css('display', 'none');
         $(".ranking").css('display', 'none');
@@ -69,7 +71,8 @@ $(document).ready(() => {
       let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
       $(".table-body").append(
         `<tr id=${player.id} class="${activeRow}">
-          <td>${player.name}<br>${playerTeam}
+          <td>${player.name}<br>
+            <a href="${marketPlaceLink}">${playerTeam}</a>
           <td style="text-align: right; ${hidemmrdetails}" class="mmr">
             <span class="player-mmr badge badge-dark">0</span>
           <td style="text-align: right; ${hidemmrdetails}" class="ranking">
@@ -124,9 +127,9 @@ $(document).ready(() => {
       rows = table.rows;
       for (i = 1; i < (rows.length - 1); i++) {
         shouldSwitch = false;
-        x = rows[i].getElementsByTagName("TD")[1].getElementsByClassName("player-mmr")[0];
-        y = rows[i + 1].getElementsByTagName("TD")[1].getElementsByClassName("player-mmr")[0];
-        if (removeCommaFromNumber(x.innerHTML) < removeCommaFromNumber(y.innerHTML)) {
+        x = rows[i].getElementsByTagName("TD")[2].getElementsByClassName("player-ranking")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[2].getElementsByClassName("player-ranking")[0];
+        if (removeCommaFromNumber(x.innerHTML) > removeCommaFromNumber(y.innerHTML)) {
           shouldSwitch = true;
           break;
         }
@@ -203,6 +206,14 @@ $(document).ready(() => {
     }
     return teamIcons.join("");
   }
+
+  // function showTeamComposition(team) {
+  //   let teamIcons = new Array();
+  //   for (i = 0; i < team.length; i++) {
+  //     teamIcons.push(`<img src="https://storage.googleapis.com/assets.axieinfinity.com/axies/891996/axie/axie-full-transparent.png"/>`);
+  //   }
+  //   return teamIcons.join("");
+  // }
 
   function getFeeInSlp(playerFee, totalSlp) {
     return (totalSlp * playerFee) / 100;
@@ -289,16 +300,16 @@ $(document).ready(() => {
         let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
 
         $(`#${playerId} .claimable-slp`).replaceWith(`
-          <span class="claimable-slp badge badge-light">${numberWithCommas(claimableSlp)} <img src='img/slp.png' class='slp-png'></span>
+          <span class="claimable-slp badge badge-light">${numberWithCommas(claimableSlp)}</span>
         `);
         $(`#${playerId} .avg-slp`).replaceWith(`
-          <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay}  <img src='img/slp.png' class='slp-png'></span>
+          <span class="avg-slp badge ${avgSlpBadgeColor}">${averageSlpPerDay}</span>
         `);
         $(`#${playerId} .php-earned`).replaceWith(`
           <span class="php-earned badge badge-light mgT-3" style="${feeDisplay}">₱${numberWithCommas(totalPhp)}</span>`);
 
         $(`#${playerId} .fee-player`).replaceWith(`
-          <span class="fee-player badge badge-warning mgT-3" style="${feeDisplay}">${numberWithCommas(playerFeeSlp)} <img src='img/slp.png' class='slp-png'></span>`);
+          <span class="fee-player badge badge-warning mgT-3" style="${feeDisplay}">${numberWithCommas(playerFeeSlp)}</span>`);
 
         $(`#${playerId} .fee-player-php`).replaceWith(`
           <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱${numberWithCommas(playerFeePhp)}</span>`);
@@ -321,10 +332,10 @@ $(document).ready(() => {
       dataType: "json",
       success: function (result, status, xhr) {
         $(`#${id} .player-mmr`).replaceWith(`
-          <span class="player-mmr badge badge-light">${numberWithCommas(result?.walletData.pvpData.elo)}</span>`);
+          <span class="player-mmr badge badge-light">${numberWithCommas(result?.walletData?.pvpData?.elo)}</span>`);
 
         $(`#${id} .player-ranking`).replaceWith(`
-          <span class="player-ranking badge badge-light">${numberWithCommas(result?.walletData.pvpData.rank)}</span>`);
+          <span class="player-ranking badge badge-light">${numberWithCommas(result?.walletData?.pvpData?.rank)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);

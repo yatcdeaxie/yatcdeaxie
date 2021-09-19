@@ -4,6 +4,7 @@ var playersList =
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
     name: "Jiz",
     team: ["plant", "aqua", "aqua"],
+    teamId: ['1000', '1000', '1000'],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Sept 16 2021 08:00:00 GMT+0800"
@@ -104,5 +105,37 @@ var playersList =
     totalFarmedPrevCutoff: 264,
     unclaimedSlp: 92,
     startDate: "Sept 16 2021 08:00:00 GMT+0800"
-  }
+  },
+  {
+    id: "0x4eef0012bfad763050b3155366de3c38e02ea630",
+    name: "Melvin",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 22 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
+    name: "Thirds",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 22 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
+    name: "Meys",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 22 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0xd42f848361be0fcdd5a73fcc2858c7f07a213c6e",
+    name: "Kie",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 25 2021 08:00:00 GMT+0800"
+  }   
 ] 
