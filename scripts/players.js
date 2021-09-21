@@ -112,7 +112,7 @@ var playersList =
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Sept 22 2021 08:00:00 GMT+0800"
+    startDate: "Sept 21 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
