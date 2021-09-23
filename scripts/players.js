@@ -2,7 +2,7 @@ var playersList =
 [
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "Jiz",
+    name: "Jaycee",
     team: ["plant", "aqua", "aqua"],
     teamId: ['1000', '1000', '1000'],
     totalFarmedPrevCutoff: 0,
