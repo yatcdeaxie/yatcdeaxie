@@ -137,5 +137,21 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Sept 29 2021 08:00:00 GMT+0800"
-  }   
+  },
+  {
+    id: "0xca44ecc383572215e47d4eda640183cab6816c47",
+    name: "Jeffrey Valerio",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 30 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x8ec62ab60f293c9eba1d319874d5483886ea49be",
+    name: "Berna",
+    team: ["plant", "aqua", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Sept 30 2021 08:00:00 GMT+0800"
+  }
 ] 
