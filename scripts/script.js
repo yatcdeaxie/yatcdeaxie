@@ -157,10 +157,10 @@ $(document).ready(() => {
   function getAverageSlpPerDay(dateStarted, totalSlp) {
     let currentDate = new Date(); // get current date
     let currentHour = currentDate.getHours(); // get current hour
-    axieResetDate = currentHour >=8 ? new Date(currentDate.setDate(currentDate.getDate() + 1)) : currentDate;
+    axieResetDate = currentHour >=8 ? new Date(currentDate.setDate(currentDate.getDate())) : currentDate;
     let scholarStartDate = new Date(dateStarted);
     let convertDiffDays = (axieResetDate.getDate() - scholarStartDate.getDate())
-    let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays; // if date difference is less than or equal to 0 set default diff days to 1, else get diffdays
+    let diffDays = convertDiffDays <= 0 ? 1 : convertDiffDays + 1; // if date difference is less than or equal to 0 set default diff days to 1, else get diffdays
     let avgSlp = totalSlp/diffDays || 0;
     return avgSlp.toFixed();
   }
@@ -247,7 +247,7 @@ $(document).ready(() => {
   
   function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0, unclaimedSlp = 0) {
     let playerFee = getFee(averageSlpPerDay) || 0;
-    let diffDays = (axieResetDate.getDate() - new Date(player.startDate).getDate())
+    let diffDays = (axieResetDate.getDate() - new Date(player.startDate).getDate()) + 1;
     let feeInSlp = getFeeInSlp(playerFee, totalSlp);
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
     let unclaimedSlpInPhp = getUnclaimedInPhp(unclaimedSlp);
