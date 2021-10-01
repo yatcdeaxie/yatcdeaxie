@@ -37,7 +37,7 @@ var playersList =
   {
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
     name: "Augustusaurus",
-    team: ["plant", "aqua", "beast"],
+    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 1 2021 08:00:00 GMT+0800"

@@ -72,7 +72,7 @@ $(document).ready(() => {
       $(".table-body").append(
         `<tr id=${player.id} class="${activeRow}">
           <td>${player.name}<br>
-            <a href="${marketPlaceLink}">${playerTeam}</a>
+            <a href="${marketPlaceLink}" target="_blank">${playerTeam}</a>
           <td style="text-align: right; ${hidemmrdetails}" class="mmr">
             <span class="player-mmr badge badge-dark">0</span>
           <td style="text-align: right; ${hidemmrdetails}" class="ranking">
