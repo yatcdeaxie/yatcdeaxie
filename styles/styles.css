@@ -50,6 +50,56 @@
 .avg-slp, .player-mmr, .fee-player, .fee-player-php { width: auto; text-align: right; padding: 3px 5px; }
 .active-row { background-color: var(--dark-gray); }
 
+.player-battle-history {
+  margin-right: 20px;
+  background: aquamarine;
+  border: none;
+  border: 1px transparent;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-body {
+  overflow-y: auto;
+  height: 600px;
+}
+
+.fighters div {
+  display: inline-block;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.fighters img {
+  max-width: 65px;
+}
+
+.winner {
+  background-color: lightgreen;
+  height: 50px;
+}
+
+@media only screen and (max-width: 425px) {
+  .fighters img {
+    max-width: 50px;
+  }
+
+  .winner {
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .fighters img {
+    max-width: 45px;
+  }
+
+  .winner {
+    height: 40px;
+  }
+}
+
 .nav-link {
   color: var(--white);
 }
@@ -95,6 +145,7 @@
 .pdT-10 { padding-top: 10px; }
 .pdB-10 { padding-bottom: 10px; }
 .pdB-20 { padding-bottom: 20px; }
+.pd-05 { padding: 0 5px; }
 
 /** Margin */
 .mg-0 { margin: 0; }

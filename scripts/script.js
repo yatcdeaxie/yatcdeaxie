@@ -50,9 +50,15 @@ $(document).ready(() => {
     sortPlayerByHighestSlp();
   });
 
-  $(document).on("click",".player-name", function () {
+  $(document).on("click",".player-battle-history", function () {
     let getId = this.getAttribute('id');
+    let player = players.find((player) => player.id === getId);
+    $('#team-name-battle-history').text(`Team ${player.name}`);
     getBattleHistory(getId);
+  });
+
+  $(document).on("click",".close", function () {
+    $(".modal-body .fighters").empty();
   });
 
   function createPlayersTable() {
@@ -73,12 +79,21 @@ $(document).ready(() => {
       let activePlayerAdmin = loggedInPlayer.id === '0x00f1224b055edcb0accab42eda55df0bf00f48a4';
       let addBr = activePlayerAdmin ? '<br/>' : '';
       let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
-      // let teamManagerColor = setTeamManager(player.manager);
       $(".table-body").append(
         `<tr id=${player.id} class="${activeRow}">
           <td>
-            <div id="${player.id}" class="player-name">${player.name}</div>
-            <div><a href="${marketPlaceLink}" target="_blank">${playerTeam}</a></div>
+            <div style="display: flex;">
+              <button type="button" id="${player.id}" class="player-battle-history" data-toggle="modal" data-target="#battleHistoryModal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play" viewBox="0 0 16 16">
+                  <path d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z"/>
+                  <path d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z"/>
+                </svg>
+              </button>
+              <div>
+                <div id="${player.id}" class="player-name">${player.name}</div>
+                <div><a href="${marketPlaceLink}" target="_blank">${playerTeam}</a></div>
+              </div>
+            </div>
           <td style="text-align: right; ${hidemmrdetails}" class="mmr">
             <span class="player-mmr badge badge-dark">0</span>
           <td style="text-align: right; ${hidemmrdetails}" class="ranking">
@@ -93,16 +108,6 @@ $(document).ready(() => {
             <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱0.00</span>`);
     }
   }
-
-  // function setTeamManager(manager) {
-  //   if (manager === 'KD') {
-  //     return 'yellow';
-  //   } else if (manager === 'VD') {
-  //     return 'hotpink';
-  //   } else {
-  //     return 'white';
-  //   }
-  // }
 
   function numberWithCommas(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -378,7 +383,44 @@ $(document).ready(() => {
       url: `https://game-api.axie.technology/battlelog/${id}`,
       dataType: "json",
       success: function (result, status, xhr) {
-        console.log(result);
+        let fighterHtml = '';
+        if (result[0]?.items?.length === 0) {
+          fighterHtml += `<div>NO DATA FOUND!</div>`;
+        }
+        let gameList = result[0].items;
+        let itemCount = gameList.length < 20 ? gameList.length : 20;
+        for (i = 0; i < itemCount; i++) {
+          let teamNumber = getKeyByValue(gameList[i], id);
+          let setTeamId = teamNumber === 'first_client_id' ? gameList[i].first_team_id : gameList[i].second_team_id;
+          let isWinner = (teamNumber === 'first_client_id' && gameList[i].winner === 0) || (teamNumber === 'second_client_id' && gameList[i].winner === 1); 
+          let teamOneWin = '';
+          let teamTwoWin = '';
+          isWinner ? teamOneWin = 'winner' : teamTwoWin = 'winner';
+          let fighters = gameList[i].fighters;
+          fighters.sort((a) => (a.team_id === setTeamId) ? -1 : 1);
+          fighterHtml += `<a href="https://cdn.axieinfinity.com/game/deeplink.html?f=rpl&q=${gameList[i].battle_uuid}" target="_blank">`;
+            fighterHtml += `<div class="team-one ${teamOneWin}">`; 
+              for (a = 0; a < 3; a++) {
+                fighterHtml += `
+                  <span>
+                    <img class="img-fluid" src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
+                  </span>
+                `;
+              }
+            fighterHtml += `</div>`;
+            fighterHtml += `<span class="pd-05"><img src="./img/versus.png" class="imgsize-icon"/></span>`;
+            fighterHtml += `<div class="team-two ${teamTwoWin}">`;
+              for (a = 3; a < 6; a++) {
+                fighterHtml += `
+                  <span>
+                    <img class="img-fluid" src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
+                  </span>
+                `;
+              }
+            fighterHtml += `</div>`;
+          fighterHtml += `</a>`;
+        }
+        $('.fighters').html(fighterHtml);
       },
       error: function (xhr, status, error) {
         console.log(xhr.status + "" + xhr.statusText);
@@ -386,7 +428,9 @@ $(document).ready(() => {
     });
   }
 
-  
+  function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
 
   $(document).ajaxStop(() => {
     sortPlayerByHighestSlp();

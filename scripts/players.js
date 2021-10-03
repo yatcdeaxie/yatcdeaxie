@@ -166,7 +166,7 @@ var playersList =
   {
     id: "0x70bcb78b4afd98201984bc01c364290c55acf88e",
     name: "Mikoy",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "dusk", "beast"],
     manager: "YA",
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
