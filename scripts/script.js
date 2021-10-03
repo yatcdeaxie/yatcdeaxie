@@ -50,6 +50,11 @@ $(document).ready(() => {
     sortPlayerByHighestSlp();
   });
 
+  $(document).on("click",".player-name", function () {
+    let getId = this.getAttribute('id');
+    getBattleHistory(getId);
+  });
+
   function createPlayersTable() {
     $("#total-player").text(players.length);
     for (var i = 0; i < players.length; i++) {
@@ -60,8 +65,7 @@ $(document).ready(() => {
       let activeRow = loggedInPlayer.id === player.id ? 'active-row' : '';
       let activeTabIsSlpEarned = $("a.nav-link.active.slp-earned").length === 1;
       let hidemmrdetails = activeTabIsSlpEarned ? 'display: none;' : '';
-      let roninAddMarketPlace = player.id.substring(2);
-      let marketPlaceLink = `https://marketplace.axieinfinity.com/profile/ronin:${roninAddMarketPlace}/axie`;
+      let marketPlaceLink = `https://marketplace.axieinfinity.com/profile/ronin:${player.id.substring(2)}/axie`;
       if (activeTabIsSlpEarned) {
         $(".mmr").css('display', 'none');
         $(".ranking").css('display', 'none');
@@ -69,10 +73,12 @@ $(document).ready(() => {
       let activePlayerAdmin = loggedInPlayer.id === '0x00f1224b055edcb0accab42eda55df0bf00f48a4';
       let addBr = activePlayerAdmin ? '<br/>' : '';
       let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
+      // let teamManagerColor = setTeamManager(player.manager);
       $(".table-body").append(
         `<tr id=${player.id} class="${activeRow}">
-          <td>${player.name}<br>
-            <a href="${marketPlaceLink}" target="_blank">${playerTeam}</a>
+          <td>
+            <div id="${player.id}" class="player-name">${player.name}</div>
+            <div><a href="${marketPlaceLink}" target="_blank">${playerTeam}</a></div>
           <td style="text-align: right; ${hidemmrdetails}" class="mmr">
             <span class="player-mmr badge badge-dark">0</span>
           <td style="text-align: right; ${hidemmrdetails}" class="ranking">
@@ -87,6 +93,16 @@ $(document).ready(() => {
             <span class="fee-player-php badge badge-warning mgT-3" style="${feeDisplay}">₱0.00</span>`);
     }
   }
+
+  // function setTeamManager(manager) {
+  //   if (manager === 'KD') {
+  //     return 'yellow';
+  //   } else if (manager === 'VD') {
+  //     return 'hotpink';
+  //   } else {
+  //     return 'white';
+  //   }
+  // }
 
   function numberWithCommas(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -205,14 +221,6 @@ $(document).ready(() => {
     }
     return teamIcons.join("");
   }
-
-  // function showTeamComposition(team) {
-  //   let teamIcons = new Array();
-  //   for (i = 0; i < team.length; i++) {
-  //     teamIcons.push(`<img src="https://storage.googleapis.com/assets.axieinfinity.com/axies/891996/axie/axie-full-transparent.png"/>`);
-  //   }
-  //   return teamIcons.join("");
-  // }
 
   function getFeeInSlp(playerFee, totalSlp) {
     return (totalSlp * playerFee) / 100;
@@ -363,6 +371,22 @@ $(document).ready(() => {
       }
     });
   }
+
+  function getBattleHistory(id) {
+    $.ajax({
+      type: "GET",
+      url: `https://game-api.axie.technology/battlelog/${id}`,
+      dataType: "json",
+      success: function (result, status, xhr) {
+        console.log(result);
+      },
+      error: function (xhr, status, error) {
+        console.log(xhr.status + "" + xhr.statusText);
+      }
+    });
+  }
+
+  
 
   $(document).ajaxStop(() => {
     sortPlayerByHighestSlp();
