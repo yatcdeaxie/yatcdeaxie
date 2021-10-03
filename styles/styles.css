@@ -12,6 +12,7 @@
   --red-dark: #bd1721;
   --dark-pink: #fe4464;
   --carnation-pink: #ffaebc;
+  --lightgreen: lightgreen;
 }
 
 .page-background {
@@ -72,33 +73,44 @@
 }
 
 .fighters img {
-  max-width: 65px;
+  max-width: 38px;
 }
 
 .winner {
-  background-color: lightgreen;
-  height: 50px;
+  background-color: var(--lightgreen);
+  height: 30px;
 }
 
-@media only screen and (max-width: 425px) {
-  .fighters img {
-    max-width: 50px;
-  }
-
-  .winner {
-    height: 40px;
-  }
-}
-
-@media only screen and (max-width: 375px) {
+@media screen and (min-width: 375px) {
   .fighters img {
     max-width: 45px;
   }
 
   .winner {
-    height: 40px;
+    height: 35px;
   }
 }
+
+@media screen and (min-width: 425px) {
+  .fighters img {
+    max-width: 54px;
+  }
+
+  .winner {
+    height: 41px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fighters img {
+    max-width: 65px;
+  }
+
+  .winner {
+    height: 49px;
+  }
+}
+
 
 .nav-link {
   color: var(--white);
@@ -135,6 +147,7 @@
 .white-text { color: var(--white); }
 .gold-text { color: var(--gold); }
 .pink-text { color: var(--dark-pink); }
+.color-lightgreen { color: var(--lightgreen); }
 
 /** Padding */
 .pd-0 { padding: 0; }

@@ -90,7 +90,7 @@ $(document).ready(() => {
                 </svg>
               </button>
               <div>
-                <div id="${player.id}" class="player-name">${player.name}</div>
+                <div>${player.name}</div>
                 <div><a href="${marketPlaceLink}" target="_blank">${playerTeam}</a></div>
               </div>
             </div>
