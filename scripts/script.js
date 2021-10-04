@@ -405,24 +405,22 @@ $(document).ready(() => {
           let fighters = gameList[i].fighters;
           fighters.sort((a) => (a.team_id === setTeamId) ? -1 : 1);
           fighterHtml += `<a href="https://cdn.axieinfinity.com/game/deeplink.html?f=rpl&q=${gameList[i].battle_uuid}" target="_blank">`;
-            fighterHtml += `<div class="team-one ${teamOneWin}">`; 
-              for (a = 0; a < 3; a++) {
-                fighterHtml += `
-                  <span>
-                    <img class="img-fluid" src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
-                  </span>
-                `;
-              }
-            fighterHtml += `</div>`;
-            fighterHtml += `<span class="pd-05"><img src="./img/versus.png" class="imgsize-icon"/></span>`;
-            fighterHtml += `<div class="team-two ${teamTwoWin}">`;
-              for (a = 3; a < 6; a++) {
-                fighterHtml += `
-                  <span>
-                    <img class="img-fluid" src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
-                  </span>
-                `;
-              }
+            fighterHtml += `<div class="battle-container">`; 
+              fighterHtml += `<div class="team-one ${teamOneWin}">`; 
+                for (a = 0; a < 3; a++) {
+                  fighterHtml += `
+                    <img src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
+                  `;
+                }
+              fighterHtml += `</div>`;
+              fighterHtml += `<div class="versus"><img src="./img/versus.png" class="imgsize-icon"/></div>`;
+              fighterHtml += `<div class="team-two ${teamTwoWin}">`;
+                for (a = 3; a < 6; a++) {
+                  fighterHtml += `
+                    <img src="https://storage.googleapis.com/assets.axieinfinity.com/axies/${fighters[a].fighter_id}/axie/axie-full-transparent.png"/>
+                  `;
+                }
+              fighterHtml += `</div>`;
             fighterHtml += `</div>`;
           fighterHtml += `</a>`;
         }
