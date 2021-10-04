@@ -39,6 +39,7 @@ $(document).ready(() => {
     $(".ranking").css('display', 'table-cell');
     $(".daily-avg").css('display', 'none');
     $(".claimableSlp").css('display', 'none');
+    $(".player-battle-history").css('display', 'none');
     sortPlayerByRanking();
   });
 
@@ -47,6 +48,7 @@ $(document).ready(() => {
     $(".ranking").css('display', 'none');
     $(".daily-avg").css('display', 'table-cell');
     $(".claimableSlp").css('display', 'table-cell');
+    $(".player-battle-history").css('display', 'block');
     sortPlayerByHighestSlp();
   });
 
@@ -57,9 +59,9 @@ $(document).ready(() => {
     getBattleHistory(getId);
   });
 
-  $(document).on("click",".close", function () {
+  $('#battleHistoryModal').on('hidden.bs.modal', function (e) {
     $(".modal-body .fighters").empty();
-  });
+  })
 
   function createPlayersTable() {
     $("#total-player").text(players.length);
@@ -287,6 +289,10 @@ $(document).ready(() => {
     $(`#wallet-claimable-php`).text(`₱${numberWithCommas(claimableSlpInPhp.toFixed())}`);
   }
 
+  function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+  }
+
   function getPlayerAxieInfo(id) {
     $.ajax({
       type: "GET",
@@ -426,10 +432,6 @@ $(document).ready(() => {
         console.log(xhr.status + "" + xhr.statusText);
       }
     });
-  }
-
-  function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
   }
 
   $(document).ajaxStop(() => {
