@@ -62,7 +62,7 @@ $(document).ready(() => {
   $(document).on("click",".player-battle-history", function () {
     let getId = this.getAttribute('id');
     let player = players.find((player) => player.id === getId);
-    $('#team-name-battle-history').text(`Team ${player.name}`);
+    $('#team-name-battle-history').text(`Team ${player.name} Battle Log`);
     getBattleHistory(getId);
   });
 
