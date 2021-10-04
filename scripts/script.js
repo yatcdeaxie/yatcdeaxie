@@ -14,6 +14,7 @@ $(document).ready(() => {
     getSlpPrice();
   } else {
     $('#body-container').hide();
+    $('.signout').hide();
   }
   
   $('#submit-passcode').click((e) => {
@@ -26,12 +27,18 @@ $(document).ready(() => {
       $('.login-form').hide();
       localStorage.setItem("credential", passcode);
       $('#body-container').show();
+      $('.signout').show();
       e.preventDefault();
       getSlpPrice();
     } else {
       $('#passcode').get(0).setCustomValidity('Invalid passcode');
       $('#passcode').addClass("is-invalid");  
     }
+  });
+
+  $(document).on("click",".signout", function () {
+    localStorage.clear();
+    location.reload();
   });
 
   $(document).on("click",".nav-link.arena", function () {
