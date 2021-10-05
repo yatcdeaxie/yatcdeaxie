@@ -59,11 +59,11 @@ var playersList =
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
-    name: "Carl19",
+    name: "BajiruKyoo",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 610,
     unclaimedSlp: 0,
-    startDate: "Oct 1 2021 08:00:00 GMT+0800"
+    startDate: "Oct 5 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xef453a4ce4eb92fdfcc97a097586c50446e9ec03",
