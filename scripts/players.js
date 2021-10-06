@@ -187,11 +187,11 @@ var playersList =
   },
   {
     id: "0x733677045cae9c8098149697d8f72b7e6c7ef157",
-    name: "Radyork",
+    name: "Don Mazo",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 348,
     unclaimedSlp: 0,
-    startDate: "Oct 1 2021 08:00:00 GMT+0800"
+    startDate: "Oct 6 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
