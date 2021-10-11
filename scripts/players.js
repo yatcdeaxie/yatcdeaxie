@@ -11,7 +11,7 @@ var playersList =
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
     name: "Big Boss III",
-    team: ["plant", "reptile", "aqua"],
+    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 1 2021 08:00:00 GMT+0800"
@@ -52,7 +52,7 @@ var playersList =
   {
     id: "0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f",
     name: "TakQuiz",
-    team: ["plant", "plant", "aqua"],
+    team: ["plant", "plant", "reptile"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 1 2021 08:00:00 GMT+0800"
@@ -131,11 +131,11 @@ var playersList =
   },
   {
     id: "0xd42f848361be0fcdd5a73fcc2858c7f07a213c6e",
-    name: "Kie",
+    name: "Mr. Feeders",
     team: ["plant", "aqua", "aqua"],
-    totalFarmedPrevCutoff: 156,
-    unclaimedSlp: 47,
-    startDate: "Oct 1 2021 08:00:00 GMT+0800"
+    totalFarmedPrevCutoff: 1056,
+    unclaimedSlp: 0,
+    startDate: "Oct 12 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x8a17825f5e3414815b4398afa999a3ef552649da",
