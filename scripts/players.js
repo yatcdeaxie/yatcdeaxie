@@ -189,9 +189,9 @@ var playersList =
     id: "0x5b42b5ed58f09fe0c55df330dff21ff94be21b2d",
     name: "Nald",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 669,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Oct 13 2021 08:00:00 GMT+0800"
+    startDate: "Oct 14 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
