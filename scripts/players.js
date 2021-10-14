@@ -186,8 +186,8 @@ var playersList =
     startDate: "Oct 6 2021 08:00:00 GMT+0800"
   },
   {
-    id: "0x733677045cae9c8098149697d8f72b7e6c7ef157",
-    name: "Don Mazo",
+    id: "0x5b42b5ed58f09fe0c55df330dff21ff94be21b2d",
+    name: "Nald",
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 669,
     unclaimedSlp: 0,
@@ -201,4 +201,4 @@ var playersList =
     unclaimedSlp: 0,
     startDate: "Oct 6 2021 08:00:00 GMT+0800"
   }
-] 
+]
