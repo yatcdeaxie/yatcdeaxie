@@ -351,19 +351,15 @@ $(document).ready(() => {
   function getPlayerArenaRanking(id) {
     $.ajax({
       type: "GET",
-      url: `https://axie-infinity.p.rapidapi.com/get-update/${id}`,
-      headers: {
-        'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
-        'x-rapidapi-key': '64776f09f3msh04aaad33770abefp150684jsn6766ed1262e0'
-      },
+      url: `https://game-api.axie.technology/mmr/${id}`,
       method: "GET",
       dataType: "json",
       success: function (result, status, xhr) {
         $(`#${id} .player-mmr`).replaceWith(`
-        <span class="player-mmr badge badge-light">${numberWithCommas(result?.leaderboard?.elo)}</span>`);
+        <span class="player-mmr badge badge-light">${numberWithCommas(result[0].items[1].elo)}</span>`);
 
         $(`#${id} .player-ranking`).replaceWith(`
-        <span class="player-ranking badge badge-light">${numberWithCommas(result?.leaderboard?.rank)}</span>`);
+        <span class="player-ranking badge badge-light">${numberWithCommas(result[0].items[1].rank)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
