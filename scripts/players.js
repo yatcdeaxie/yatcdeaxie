@@ -124,7 +124,7 @@ var playersList =
   {
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
     name: "Meys",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
@@ -154,14 +154,6 @@ var playersList =
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
   },
   {
-    id: "0xfadb0ee2909568f0fef334833745463b62e1656a",
-    name: "Abateka",
-    team: ["plant", "aqua", "mech"],
-    totalFarmedPrevCutoff: 1042,
-    unclaimedSlp: 0,
-    startDate: "Oct 16 2021 08:00:00 GMT+0800"
-  },
-  {
     id: "0xca44ecc383572215e47d4eda640183cab6816c47",
     name: "Jeffrey Valerio",
     team: ["plant", "reptile", "mech"],
@@ -188,7 +180,7 @@ var playersList =
   {
     id: "0x5b42b5ed58f09fe0c55df330dff21ff94be21b2d",
     name: "Shiya",
-    team: ["plant", "reptile", "mech"],
+    team: ["plant", "aqua", "mech"],
     totalFarmedPrevCutoff: 140,
     unclaimedSlp: 0,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
