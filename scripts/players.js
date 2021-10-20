@@ -183,7 +183,7 @@ var playersList =
     team: ["plant", "aqua", "mech"],
     totalFarmedPrevCutoff: 140,
     unclaimedSlp: 0,
-    startDate: "Oct 16 2021 08:00:00 GMT+0800"
+    startDate: "Oct 19 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
