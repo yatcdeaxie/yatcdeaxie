@@ -11,7 +11,7 @@ var playersList =
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
     name: "Big Boss III",
-    team: ["plant", "reptile", "mech"],
+    team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
@@ -152,6 +152,14 @@ var playersList =
     totalFarmedPrevCutoff: 1535,
     unclaimedSlp: 537,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x364936bd94227688272fa3597d46cd877ce25d28",
+    name: "Kirov12sg",
+    team: ["plant", "reptile", "beast"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Oct 23 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xca44ecc383572215e47d4eda640183cab6816c47",
