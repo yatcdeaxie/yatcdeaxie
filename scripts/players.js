@@ -159,7 +159,7 @@ var playersList =
     team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "Oct 23 2021 08:00:00 GMT+0800"
+    startDate: "Oct 24 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xca44ecc383572215e47d4eda640183cab6816c47",
