@@ -60,7 +60,7 @@ var playersList =
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
     name: "BajiruKyoo",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
@@ -156,10 +156,18 @@ var playersList =
   {
     id: "0x364936bd94227688272fa3597d46cd877ce25d28",
     name: "Kirov12sg",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 24 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e",
+    name: "God Mode",
+    team: ["plant", "reptile", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "Oct 30 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xca44ecc383572215e47d4eda640183cab6816c47",
@@ -188,7 +196,7 @@ var playersList =
   {
     id: "0x5b42b5ed58f09fe0c55df330dff21ff94be21b2d",
     name: "Shiya",
-    team: ["plant", "aqua", "mech"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 140,
     unclaimedSlp: 0,
     startDate: "Oct 19 2021 08:00:00 GMT+0800"
