@@ -60,7 +60,7 @@ var playersList =
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
     name: "BajiruKyoo",
-    team: ["plant", "reptile", "mech"],
+    team: ["plant", "reptile", "reptile"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "Oct 16 2021 08:00:00 GMT+0800"
@@ -163,7 +163,7 @@ var playersList =
   },
   {
     id: "0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e",
-    name: "GodMode",
+    name: "TopPlayer",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
