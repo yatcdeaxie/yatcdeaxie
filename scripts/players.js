@@ -147,7 +147,7 @@ var playersList =
   },
   {
     id: "0x70bcb78b4afd98201984bc01c364290c55acf88e",
-    name: "Mikoy",
+    name: "el88",
     team: ["plant", "dusk", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
