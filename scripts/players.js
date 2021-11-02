@@ -2,11 +2,11 @@ var playersList =
 [
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "Jaycee",
+    name: "Sense28",
     team: ["plant", "aqua", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 216,
     unclaimedSlp: 0,
-    startDate: "November 1 2021 08:00:00 GMT+0800"
+    startDate: "November 2 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
