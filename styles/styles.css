@@ -66,7 +66,7 @@
 .php-earned, .avg-slp, .player-mmr, .player-ranking, .claimable-slp, .fee-player, .fee-player-php { font-size: 12px; font-weight: normal; }
 .percentage { color: var(--black-01); font-size: 12px; }
 .avg-slp, .player-mmr, .fee-player, .fee-player-php { width: auto; text-align: right; padding: 3px 5px; }
-.active-row { background-color: var(--dark-gray); }
+.active-row { background-color: var(--black-01); }
 
 .player-battle-history {
   margin-right: 20px;
