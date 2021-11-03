@@ -85,7 +85,7 @@ $(document).ready(() => {
         $(".mmr").css('display', 'none');
         $(".ranking").css('display', 'none');
       }
-      let activePlayerAdmin = loggedInPlayer.id === '0x00f1224b055edcb0accab42eda55df0bf00f48a4';
+      let activePlayerAdmin = loggedInPlayer.id === '0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e';
       let addBr = activePlayerAdmin ? '<br/>' : '';
       let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
       $(".table-body").append(
@@ -324,7 +324,7 @@ $(document).ready(() => {
         if (playerId === loggedInPlayer.id) {
           setPlayerWallet(player, totalSlpCollected, claimableSlp, totalPhp, averageSlpPerDay, unclaimedSlp);
         }
-        let activePlayerAdmin = loggedInPlayer.id === '0x00f1224b055edcb0accab42eda55df0bf00f48a4';
+        let activePlayerAdmin = loggedInPlayer.id === '0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e';
         let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
 
         $(`#${playerId} .claimable-slp`).replaceWith(`

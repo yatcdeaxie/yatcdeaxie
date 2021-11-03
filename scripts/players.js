@@ -10,11 +10,11 @@ var playersList =
   },
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
-    name: "Big Boss III",
+    name: "Jaycee",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 396,
     unclaimedSlp: 0,
-    startDate: "November 1 2021 08:00:00 GMT+0800"
+    startDate: "November 3 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
