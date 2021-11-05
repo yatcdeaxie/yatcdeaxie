@@ -218,12 +218,3 @@ var playersList =
     startDate: "November 5 2021 08:00:00 GMT+0800"
   }
 ]
-
-
-
-
-
-
-
-
-ronin:e79aa3b463de742543e1e821603091ccb113cdfc
