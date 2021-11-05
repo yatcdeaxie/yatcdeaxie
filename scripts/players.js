@@ -91,11 +91,11 @@ var playersList =
   },
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
-    name: "Okpy",
+    name: "JD",
     team: ["plant", "aqua", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 805,
     unclaimedSlp: 0,
-    startDate: "November 1 2021 08:00:00 GMT+0800"
+    startDate: "November 6 2021 08:00:00 GMT+0800"
   },
   {
     id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
@@ -124,7 +124,7 @@ var playersList =
   {
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
     name: "Meys",
-    team: ["plant", "reptile", "aqua"],
+    team: ["plant", "dusk", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 1 2021 08:00:00 GMT+0800"
@@ -208,5 +208,22 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 1 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "ronin:e79aa3b463de742543e1e821603091ccb113cdfc",
+    name: "Okpy",
+    team: ["plant", "reptile", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "November 5 2021 08:00:00 GMT+0800"
   }
 ]
+
+
+
+
+
+
+
+
+ronin:e79aa3b463de742543e1e821603091ccb113cdfc
