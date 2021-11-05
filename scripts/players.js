@@ -91,7 +91,7 @@ var playersList =
   },
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
-    name: "JD",
+    name: "Haruna",
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 805,
     unclaimedSlp: 0,
