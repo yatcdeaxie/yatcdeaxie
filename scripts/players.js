@@ -210,7 +210,7 @@ var playersList =
     startDate: "November 1 2021 08:00:00 GMT+0800"
   },
   {
-    id: "ronin:e79aa3b463de742543e1e821603091ccb113cdfc",
+    id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
     name: "Okpy",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
