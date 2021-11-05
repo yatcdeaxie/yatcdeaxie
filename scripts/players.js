@@ -213,8 +213,8 @@ var playersList =
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
     name: "Okpy",
     team: ["plant", "reptile", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 75,
     unclaimedSlp: 0,
-    startDate: "November 5 2021 08:00:00 GMT+0800"
+    startDate: "November 6 2021 08:00:00 GMT+0800"
   }
 ]
