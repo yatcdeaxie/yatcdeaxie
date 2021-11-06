@@ -44,7 +44,7 @@ var playersList =
   {
     id: "0x4d7c90157257839004927540bad56d479e93273d",
     name: "Alliepot",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 1 2021 08:00:00 GMT+0800"
@@ -214,6 +214,14 @@ var playersList =
     name: "Okpy",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 75,
+    unclaimedSlp: 0,
+    startDate: "November 6 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
+    name: "Nald",
+    team: ["plant", "reptile", "aqua"],
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 6 2021 08:00:00 GMT+0800"
   }
