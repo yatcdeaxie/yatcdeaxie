@@ -224,5 +224,21 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 6 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x06c8a16d10055a6a26846b6db7117220c423bb5d",
+    name: "Daemusin",
+    team: ["plant", "reptile", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "November 7 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x790385657280767acfa8dbb38bb3f15b57dcd3f4",
+    name: "Lourence",
+    team: ["plant", "plant", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "November 7 2a021 08:00:00 GMT+0800"
   }
 ]
