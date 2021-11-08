@@ -231,7 +231,7 @@ var playersList =
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "November 7 2021 08:00:00 GMT+0800"
+    startDate: "November 8 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x790385657280767acfa8dbb38bb3f15b57dcd3f4",
@@ -239,6 +239,6 @@ var playersList =
     team: ["plant", "plant", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "November 7 2a021 08:00:00 GMT+0800"
+    startDate: "November 8 2021 08:00:00 GMT+0800"
   }
 ]
