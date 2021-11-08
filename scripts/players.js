@@ -240,5 +240,13 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 8 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x3d50e9b9bcbf4220cfcbd1b1f0e2a948bdff0c72",
+    name: "Noriel",
+    team: ["plant", "reptile", "beast"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "November 9 2021 08:00:00 GMT+0800"
   }
 ]
