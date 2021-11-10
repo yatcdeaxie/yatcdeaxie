@@ -204,7 +204,7 @@ var playersList =
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
     name: "Dlwlrma",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "November 1 2021 08:00:00 GMT+0800"
@@ -235,15 +235,15 @@ var playersList =
   },
   {
     id: "0x790385657280767acfa8dbb38bb3f15b57dcd3f4",
-    name: "Lourence",
+    name: "Darwin",
     team: ["plant", "plant", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 125,
     unclaimedSlp: 0,
-    startDate: "November 8 2021 08:00:00 GMT+0800"
+    startDate: "November 10 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x3d50e9b9bcbf4220cfcbd1b1f0e2a948bdff0c72",
-    name: "Noriel",
+    name: "Michelle",
     team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
