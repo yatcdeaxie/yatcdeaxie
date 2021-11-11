@@ -115,7 +115,7 @@ var playersList =
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
-    name: "Thirds",
+    name: "Thirdz",
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -243,10 +243,10 @@ var playersList =
   },
   {
     id: "0x3d50e9b9bcbf4220cfcbd1b1f0e2a948bdff0c72",
-    name: "Michelle",
+    name: "CheeTuss",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 84,
     unclaimedSlp: 0,
-    startDate: "November 9 2021 08:00:00 GMT+0800"
+    startDate: "November 11 2021 08:00:00 GMT+0800"
   }
 ]
