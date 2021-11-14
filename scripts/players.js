@@ -235,11 +235,11 @@ var playersList =
   },
   {
     id: "0x790385657280767acfa8dbb38bb3f15b57dcd3f4",
-    name: "Darwin",
+    name: "Buchicho",
     team: ["plant", "plant", "aqua"],
-    totalFarmedPrevCutoff: 125,
+    totalFarmedPrevCutoff: 316,
     unclaimedSlp: 0,
-    startDate: "November 10 2021 08:00:00 GMT+0800"
+    startDate: "November 15 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x3d50e9b9bcbf4220cfcbd1b1f0e2a948bdff0c72",
