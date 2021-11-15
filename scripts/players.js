@@ -246,7 +246,7 @@ var playersList =
     name: "CheeTuss",
     team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 528,
-    unclaimedSlp: 125,
+    unclaimedSlp: 133,
     startDate: "November 16 2021 08:00:00 GMT+0800"
   }
 ]
