@@ -3,7 +3,7 @@ var playersList =
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
     name: "Sense28",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 1523,
     unclaimedSlp: 0,
     startDate: "November 16 2021 08:00:00 GMT+0800"
@@ -132,7 +132,7 @@ var playersList =
   {
     id: "0xd42f848361be0fcdd5a73fcc2858c7f07a213c6e",
     name: "Mr. Feeders",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 1707,
     unclaimedSlp: 0,
     startDate: "November 16 2021 08:00:00 GMT+0800"
@@ -148,7 +148,7 @@ var playersList =
   {
     id: "0x70bcb78b4afd98201984bc01c364290c55acf88e",
     name: "el88",
-    team: ["plant", "dusk", "beast"],
+    team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 1854,
     unclaimedSlp: 0,
     startDate: "November 16 2021 08:00:00 GMT+0800"
