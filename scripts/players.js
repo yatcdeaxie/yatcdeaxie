@@ -116,7 +116,7 @@ var playersList =
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
     name: "Thirdz",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 3220,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
