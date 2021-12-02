@@ -34,14 +34,6 @@ var playersList =
     startDate: "December 1 2021 08:00:00 GMT+0800"
   },
   {
-    id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "Augustusaurus",
-    team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 1595,
-    unclaimedSlp: 0,
-    startDate: "December 1 2021 08:00:00 GMT+0800"
-  },
-  {
     id: "0x4d7c90157257839004927540bad56d479e93273d",
     name: "Alliepot",
     team: ["plant", "reptile", "mech"],
@@ -94,14 +86,6 @@ var playersList =
     name: "Haruna",
     team: ["plant", "aqua", "aqua"],
     totalFarmedPrevCutoff: 3666,
-    unclaimedSlp: 0,
-    startDate: "December 1 2021 08:00:00 GMT+0800"
-  },
-  {
-    id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
-    name: "Chicklet",
-    team: ["plant", "aqua", "aqua"],
-    totalFarmedPrevCutoff: 4299,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
   },
