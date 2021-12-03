@@ -173,7 +173,7 @@ var playersList =
     id: "0x715b802842b6f5fea16496afeceb592af123712b",
     name: "Artemiz",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 2981,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
   },
@@ -213,7 +213,7 @@ var playersList =
     id: "0x06c8a16d10055a6a26846b6db7117220c423bb5d",
     name: "Daemusin",
     team: ["plant", "reptile", "aqua"],
-    totalFarmedPrevCutoff: 2742,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
   },
