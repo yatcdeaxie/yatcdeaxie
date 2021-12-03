@@ -44,7 +44,7 @@ var playersList =
   {
     id: "0xadc3db0cf7b76955e707f99e2c1760139ebc8d1f",
     name: "TakQuiz",
-    team: ["plant", "plant", "reptile"],
+    team: ["plant", "aqua", "mech"],
     totalFarmedPrevCutoff: 5494,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
