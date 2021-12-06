@@ -60,7 +60,7 @@ var playersList =
   {
     id: "0xef453a4ce4eb92fdfcc97a097586c50446e9ec03",
     name: "Eiram",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 2150,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
@@ -92,7 +92,7 @@ var playersList =
   {
     id: "0x4eef0012bfad763050b3155366de3c38e02ea630",
     name: "Melvin",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 4579,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
