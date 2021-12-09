@@ -76,7 +76,7 @@ var playersList =
   {
     id: "0x9e441983480745a4d4bf4499e0a84f01648104e5",
     name: "Mellow Whiskey",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "aqua", "mech"],
     totalFarmedPrevCutoff: 4610,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
@@ -240,5 +240,13 @@ var playersList =
     totalFarmedPrevCutoff: 789,
     unclaimedSlp: 276,
     startDate: "December 1 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
+    name: "TopPlayerDestroyer",
+    team: ["plant", "dusk", "mech"],
+    totalFarmedPrevCutof: 0,
+    unclaimedSlp: 0,
+    startDate: "December 10 2021 08:00:00 GMT+0800"
   }
 ]
