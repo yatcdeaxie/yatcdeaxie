@@ -76,7 +76,7 @@ var playersList =
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
     name: "Haruna",
-    team: ["plant", "aqua", "aqua"],
+    team: ["plant", "dusk", "beast"],
     totalFarmedPrevCutoff: 3666,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
@@ -188,7 +188,7 @@ var playersList =
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
     name: "Okpy",
-    team: ["plant", "reptile", "aqua"],
+    team: ["plant", "dusk", "dusk"],
     totalFarmedPrevCutoff: 3016,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
