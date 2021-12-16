@@ -36,7 +36,7 @@ var playersList =
   {
     id: "0x4d7c90157257839004927540bad56d479e93273d",
     name: "Alliepot",
-    team: ["plant", "reptile", "mech"],
+    team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 2336,
     unclaimedSlp: 0,
     startDate: "December 1 2021 08:00:00 GMT+0800"
@@ -191,7 +191,7 @@ var playersList =
     team: ["plant", "dusk", "dusk"],
     totalFarmedPrevCutoff: 3016,
     unclaimedSlp: 0,
-    startDate: "December 1 2021 08:00:00 GMT+0800"
+    startDate: "December 3 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
