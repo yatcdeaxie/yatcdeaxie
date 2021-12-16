@@ -91,11 +91,11 @@ var playersList =
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
-    name: "Thirdz",
+    name: "Vacant",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 3220,
+    totalFarmedPrevCutoff: 4461,
     unclaimedSlp: 0,
-    startDate: "December 1 2021 08:00:00 GMT+0800"
+    startDate: "December 17 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
@@ -235,10 +235,18 @@ var playersList =
   },
   {
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "TopPlayerDestroyer",
+    name: "Coming Soon",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 1678,
     unclaimedSlp: 0,
     startDate: "December 10 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
+    name: "YATV",
+    team: ["plant", "dusk", "mech"],
+    totalFarmedPrevCutoff: 5593,
+    unclaimedSlp: 0,
+    startDate: "December 17 2021 08:00:00 GMT+0800"
   }
 ]
