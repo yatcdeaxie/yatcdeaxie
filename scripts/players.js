@@ -247,6 +247,6 @@ var playersList =
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 5593,
     unclaimedSlp: 0,
-    startDate: "December 18 2021 08:00:00 GMT+0800"
+    startDate: "December 17 2021 08:00:00 GMT+0800"
   }
 ]
