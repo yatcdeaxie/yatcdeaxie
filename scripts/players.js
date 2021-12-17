@@ -235,11 +235,11 @@ var playersList =
   },
   {
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "Coming Soon",
+    name: "Bri",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 1678,
+    totalFarmedPrevCutoff: 2479,
     unclaimedSlp: 0,
-    startDate: "December 10 2021 08:00:00 GMT+0800"
+    startDate: "December 17 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
