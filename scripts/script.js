@@ -271,7 +271,7 @@ $(document).ready(() => {
     let playerFee = getFee(averageSlpPerDay) || 0;
     let diffDays = (axieResetDate.getDate() - new Date(player.startDate).getDate());
     let resetTime = axieResetDate.getHours() >= 8 ? diffDays + 1 : diffDays;
-    let totalDaysDiff = resetTime > 16 ? 0 : resetTime;
+    let totalDaysDiff = resetTime > 21 ? 0 : resetTime;
     let feeInSlp = getFeeInSlp(playerFee, totalSlp);
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
     let unclaimedSlpInPhp = getUnclaimedInPhp(unclaimedSlp);
