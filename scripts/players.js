@@ -91,7 +91,7 @@ var playersList =
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
-    name: "Vacant",
+    name: "NodeJS",
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 4461,
     unclaimedSlp: 0,
@@ -247,6 +247,6 @@ var playersList =
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 5593,
     unclaimedSlp: 0,
-    startDate: "December 17 2021 08:00:00 GMT+0800"
+    startDate: "December 18 2021 08:00:00 GMT+0800"
   }
 ]
