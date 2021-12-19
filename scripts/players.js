@@ -75,11 +75,11 @@ var playersList =
   },
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
-    name: "Haruna",
+    name: "JohnRic",
     team: ["plant", "dusk", "beast"],
-    totalFarmedPrevCutoff: 3666,
+    totalFarmedPrevCutoff: 5878,
     unclaimedSlp: 0,
-    startDate: "December 1 2021 08:00:00 GMT+0800"
+    startDate: "December 19 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x4eef0012bfad763050b3155366de3c38e02ea630",
