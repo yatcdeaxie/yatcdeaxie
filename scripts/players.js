@@ -91,11 +91,11 @@ var playersList =
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
-    name: "NodeJS",
+    name: "Jemark",
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 4650,
     unclaimedSlp: 0,
-    startDate: "December 21 2021 08:00:00 GMT+0800"
+    startDate: "December 22 2021 08:00:00 GMT+0800"
   },
   {
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
@@ -235,7 +235,7 @@ var playersList =
   },
   {
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "Bri",
+    name: "Bugsss",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 2675,
     unclaimedSlp: 0,
