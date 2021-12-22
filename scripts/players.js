@@ -77,7 +77,7 @@ var playersList =
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
     name: "JohnRic",
     team: ["plant", "dusk", "beast"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 270,
     unclaimedSlp: 108,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
