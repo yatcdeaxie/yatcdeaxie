@@ -37,7 +37,7 @@ var playersList =
     id: "0x4d7c90157257839004927540bad56d479e93273d",
     name: "Alliepot",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 5440,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -53,7 +53,7 @@ var playersList =
     id: "0xef453a4ce4eb92fdfcc97a097586c50446e9ec03",
     name: "Eiram",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 5373,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -237,7 +237,7 @@ var playersList =
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
     name: "Bugsss",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 2675,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
