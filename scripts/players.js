@@ -4,7 +4,7 @@ var playersList =
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
     name: "Sense28",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 8004,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -20,7 +20,7 @@ var playersList =
     id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
     name: "Trololol",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 10375,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     deductedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
@@ -77,7 +77,7 @@ var playersList =
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
     name: "JohnRic",
     team: ["plant", "dusk", "beast"],
-    totalFarmedPrevCutoff: 6147,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 108,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -125,7 +125,7 @@ var playersList =
     id: "0x70bcb78b4afd98201984bc01c364290c55acf88e",
     name: "el88",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 6336,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -149,7 +149,7 @@ var playersList =
     id: "0xca44ecc383572215e47d4eda640183cab6816c47",
     name: "Jeffrey Valerio",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 8993,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -157,7 +157,7 @@ var playersList =
     id: "0x8ec62ab60f293c9eba1d319874d5483886ea49be",
     name: "Berna",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 6820,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -165,7 +165,7 @@ var playersList =
     id: "0x715b802842b6f5fea16496afeceb592af123712b",
     name: "Artemiz",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 4769,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -173,7 +173,7 @@ var playersList =
     id: "0x5b42b5ed58f09fe0c55df330dff21ff94be21b2d",
     name: "Shiya",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 6564,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -181,7 +181,7 @@ var playersList =
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
     name: "Dlwlrma",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 6150,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -197,7 +197,7 @@ var playersList =
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
     name: "Nald",
     team: ["plant", "reptile", "aqua"],
-    totalFarmedPrevCutoff: 8471,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -229,7 +229,7 @@ var playersList =
     id: "0xb2ede112a85c001e53587067867762ecfe649b1d",
     name: "Nam Shin",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 4090,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -245,7 +245,7 @@ var playersList =
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
     name: "YATV",
     team: ["plant", "dusk", "aqua"],
-    totalFarmedPrevCutoff: 5747,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   }
