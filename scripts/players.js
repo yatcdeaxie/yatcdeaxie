@@ -12,7 +12,7 @@ var playersList =
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
     name: "Jaycee",
     team: ["plant", "dusk", "mech"],
-    totalFarmedPrevCutoff: 6515,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -29,7 +29,7 @@ var playersList =
     id: "0x472a0453d9223768053e410bb30d19d5122d1598",
     name: "Jence",
     team: ["plant", "dusk", "beast"],
-    totalFarmedPrevCutoff: 5750,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -101,7 +101,7 @@ var playersList =
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
     name: "Meys",
     team: ["plant", "dusk", "aqua"],
-    totalFarmedPrevCutoff: 9805,
+    totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
@@ -244,7 +244,7 @@ var playersList =
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
     name: "YATV",
-    team: ["plant", "dusk", "mech"],
+    team: ["plant", "dusk", "aqua"],
     totalFarmedPrevCutoff: 5747,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
