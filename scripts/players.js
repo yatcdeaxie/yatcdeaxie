@@ -229,7 +229,7 @@ var playersList =
     id: "0xb2ede112a85c001e53587067867762ecfe649b1d",
     name: "Nam Shin",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 4090,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
   },
