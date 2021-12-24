@@ -251,7 +251,7 @@ var playersList =
   },
   {
     id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
-    name: "VACANT SLOT",
+    name: "Rampage",
     team: ["plant", "dusk", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
