@@ -248,5 +248,13 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 21 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
+    name: "VACANT SLOT",
+    team: ["plant", "dusk", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "December 30 2021 08:00:00 GMT+0800"
   }
 ]
