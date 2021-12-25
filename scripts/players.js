@@ -251,8 +251,16 @@ var playersList =
   },
   {
     id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
-    name: "Rampage",
+    name: "Calvin",
     team: ["plant", "dusk", "aqua"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "December 26 2021 08:00:00 GMT+0800"
+  },
+  {
+    id: "0x9823ef2a4ef7231b363471f0ed34e57571697c89",
+    name: "EJ",
+    team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "December 30 2021 08:00:00 GMT+0800"
