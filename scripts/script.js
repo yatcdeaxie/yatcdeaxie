@@ -191,7 +191,7 @@ $(document).ready(() => {
     let scholarStartDate = new Date(dateStarted);
     // let convertDiffDays = (axieResetDate.getDate() - scholarStartDate.getDate());
     let convertDiffDays = Math.floor((axieResetDate - scholarStartDate) / (1000*60*60*24));
-    let resetTime = axieResetDate.getHours() >= 8 ? convertDiffDays + 1 : convertDiffDays; 
+    let resetTime = axieResetDate.getHours() >= 8 ? convertDiffDays + 1 : convertDiffDays + 1; 
     let avgSlp = totalSlp/resetTime || 0;
     return avgSlp.toFixed();
   }
@@ -272,7 +272,7 @@ $(document).ready(() => {
     let playerFee = getFee(averageSlpPerDay) || 0;
     // let diffDays = (axieResetDate.getDate() - new Date(player.startDate).getDate());
     let diffDays = Math.floor((axieResetDate - new Date(player.startDate)) / (1000*60*60*24));
-    let resetTime = axieResetDate.getHours() >= 8 ? diffDays + 1 : diffDays;
+    let resetTime = axieResetDate.getHours() >= 8 ? diffDays + 1 : diffDays + 1;
     let totalDaysDiff = resetTime > 21 ? 0 : resetTime;
     let feeInSlp = getFeeInSlp(playerFee, totalSlp);
     let feeInPhp = getFeeInPhp(playerFee, totalSlp);
