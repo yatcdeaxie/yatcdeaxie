@@ -139,7 +139,7 @@ var playersList =
   },
   {
     id: "0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e",
-    name: "TopPlayer",
+    name: "Carnifex",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
