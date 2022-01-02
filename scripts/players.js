@@ -179,11 +179,11 @@ var playersList =
   },
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
-    name: "Dlwlrma",
+    name: "IamOteppp",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 1587,
     unclaimedSlp: 0,
-    startDate: "December 21 2021 08:00:00 GMT+0800"
+    startDate: "January 2 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
@@ -195,11 +195,11 @@ var playersList =
   },
   {
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
-    name: "Nald",
+    name: "Dlwlrma",
     team: ["plant", "reptile", "aqua"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "December 21 2021 08:00:00 GMT+0800"
+    totalFarmedPrevCutoff: 2157,
+    unclaimedSlp: 555,
+    startDate: "January 3 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x06c8a16d10055a6a26846b6db7117220c423bb5d",
