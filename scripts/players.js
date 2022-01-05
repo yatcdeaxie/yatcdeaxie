@@ -213,7 +213,7 @@ var playersList =
     id: "0x790385657280767acfa8dbb38bb3f15b57dcd3f4",
     name: "Buchicho",
     team: ["plant", "plant", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 1568,
     unclaimedSlp: 0,
     startDate: "January 6 2022 08:00:00 GMT+0800"
   },
