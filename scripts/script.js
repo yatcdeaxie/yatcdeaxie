@@ -198,16 +198,10 @@ $(document).ready(() => {
 
   function getTotalSlpClaimable(dailyAvg, totalSlp) {
     let slpClaimable = 0;
-    if (dailyAvg >= 195) {
+    if (dailyAvg >= 80) {
       slpClaimable = totalSlp * .50;
-    } else if(dailyAvg >= 165 && dailyAvg <= 194) {
-      slpClaimable = totalSlp * .45;
-    } else if(dailyAvg >= 135 && dailyAvg <= 164) {
+    } else if(dailyAvg >= 60 && dailyAvg <= 79) {
       slpClaimable = totalSlp * .40;
-    } else if(dailyAvg >= 105 && dailyAvg <= 134) {
-      slpClaimable = totalSlp * .35;
-    } else if(dailyAvg >= 75 && dailyAvg <= 104) {
-      slpClaimable = totalSlp * .30;
     } else {
       slpClaimable = totalSlp * 0;
     }
@@ -215,16 +209,10 @@ $(document).ready(() => {
   }
 
   function setAvgSlpBadgeColor(dailyAvg) {
-    if (dailyAvg >= 195) {
+    if (dailyAvg >= 80) {
       return 'badge-success';
-    } else if(dailyAvg >= 165 && dailyAvg <= 194) {
+    } else if(dailyAvg >= 60 && dailyAvg <= 79) {
       return 'badge-info';
-    } else if(dailyAvg >= 135 && dailyAvg <= 164) {
-      return 'badge-warning';
-    } else if(dailyAvg >= 105 && dailyAvg <= 134) {
-      return 'badge-danger';
-    } else if(dailyAvg >= 75 && dailyAvg <= 104) {
-      return 'badge-secondary';
     } else {
       return 'badge-dark';
     }
