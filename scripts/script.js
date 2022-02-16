@@ -240,16 +240,10 @@ $(document).ready(() => {
 
   function getFee(aveSlp) {
     let fee = 0;
-    if (aveSlp >= 195) {
+    if (aveSlp >= 80) {
       fee = '50';
-    } else if(aveSlp >= 165 && aveSlp <= 194) {
-      fee = '55';
-    } else if(aveSlp >= 135 && aveSlp <= 164) {
+    } else if(aveSlp >= 60 && aveSlp <= 79) {
       fee = '60';
-    } else if(aveSlp >= 105 && aveSlp <= 134) {
-      fee = '65';
-    } else if(aveSlp >= 75 && aveSlp <= 104) {
-      fee = '70';
     } else {
       fee = '100';
     }
