@@ -18,12 +18,12 @@ var playersList =
   },
   {
     id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
-    name: "Trololol",
+    name: "Earl",
     team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 478,
     unclaimedSlp: 0,
     deductedSlp: 0,
-    startDate: "February 7 2022 08:00:00 GMT+0800"
+    startDate: "February 18 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x472a0453d9223768053e410bb30d19d5122d1598",
