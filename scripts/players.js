@@ -187,11 +187,11 @@ var playersList =
   },
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
-    name: "Okpy",
+    name: "Klayd",
     team: ["plant", "dusk", "dusk"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 423,
     unclaimedSlp: 0,
-    startDate: "February 7 2022 08:00:00 GMT+0800"
+    startDate: "February 23 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
