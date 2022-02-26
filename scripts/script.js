@@ -200,7 +200,7 @@ $(document).ready(() => {
     let slpClaimable = 0;
     if (dailyAvg >= 80) {
       slpClaimable = totalSlp * .50;
-    } else if(dailyAvg >= 60 && dailyAvg <= 79) {
+    } else if(dailyAvg >= 40 && dailyAvg <= 79) {
       slpClaimable = totalSlp * .40;
     } else {
       slpClaimable = totalSlp * 0;
@@ -211,7 +211,7 @@ $(document).ready(() => {
   function setAvgSlpBadgeColor(dailyAvg) {
     if (dailyAvg >= 80) {
       return 'badge-success';
-    } else if(dailyAvg >= 60 && dailyAvg <= 79) {
+    } else if(dailyAvg >= 40 && dailyAvg <= 79) {
       return 'badge-info';
     } else {
       return 'badge-dark';
@@ -242,7 +242,7 @@ $(document).ready(() => {
     let fee = 0;
     if (aveSlp >= 80) {
       fee = '50';
-    } else if(aveSlp >= 60 && aveSlp <= 79) {
+    } else if(aveSlp >= 40 && aveSlp <= 79) {
       fee = '60';
     } else {
       fee = '100';
