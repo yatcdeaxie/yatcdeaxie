@@ -27,8 +27,8 @@ var playersList =
   },
   {
     id: "0x472a0453d9223768053e410bb30d19d5122d1598",
-    name: "Jence",
-    team: ["plant", "dusk", "beast"],
+    name:"PogsGaming",
+    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "February 27 2022 08:00:00 GMT+0800"
