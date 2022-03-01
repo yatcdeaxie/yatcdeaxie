@@ -235,11 +235,11 @@ var playersList =
   },
   {
     id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "Bugsss",
+    name: "Jamdreb",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "February 27 2022 08:00:00 GMT+0800"
+    startDate: "March 1 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
