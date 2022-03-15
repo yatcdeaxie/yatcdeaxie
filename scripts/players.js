@@ -91,11 +91,11 @@ var playersList =
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
-    name: "XXX",
+    name: "IamOteppp",
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "March 14 2022 08:00:00 GMT+0800"
+    startDate: "March 16 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
@@ -179,11 +179,11 @@ var playersList =
   },
   {
     id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
-    name: "IamOteppp",
+    name: "Selenide",
     team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 7,
     unclaimedSlp: 0,
-    startDate: "March 14 2022 08:00:00 GMT+0800"
+    startDate: "March 15 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
