@@ -183,7 +183,7 @@ var playersList =
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 7,
     unclaimedSlp: 0,
-    startDate: "March 15 2022 08:00:00 GMT+0800"
+    startDate: "March 16 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
@@ -234,12 +234,12 @@ var playersList =
     startDate: "March 14 2022 08:00:00 GMT+0800"
   },
   {
-    id: "0x984aa6669a897997770ca21ea46f59bb409067b2",
-    name: "Jamdreb",
+    id: "0x9823ef2a4ef7231b363471f0ed34e57571697c89",
+    name: "Alezia",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "March 14 2022 08:00:00 GMT+0800"
+    startDate: "March 17 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
