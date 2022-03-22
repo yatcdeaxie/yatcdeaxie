@@ -340,10 +340,10 @@ $(document).ready(() => {
       dataType: "json",
       success: function (result, status, xhr) {
         $(`#${id} .player-mmr`).replaceWith(`
-        <span class="player-mmr badge badge-light">${numberWithCommas(result[0].items[1].elo)}</span>`);
+        <span class="player-mmr badge badge-light">${numberWithCommas(result[0].items[0].elo)}</span>`);
 
         $(`#${id} .player-ranking`).replaceWith(`
-        <span class="player-ranking badge badge-light">${numberWithCommas(result[0].items[1].rank)}</span>`);
+        <span class="player-ranking badge badge-light">${numberWithCommas(result[0].items[0].rank)}</span>`);
       },
       error: function (xhr, status, error) {
         console.log(`${xhr.status} ${xhr.statusText}`);
