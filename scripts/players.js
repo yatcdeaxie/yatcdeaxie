@@ -235,7 +235,7 @@ var playersList =
   },
   {
     id: "0x9823ef2a4ef7231b363471f0ed34e57571697c89",
-    name: "Alezia",
+    name: "YATV",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -243,11 +243,11 @@ var playersList =
   },
   {
     id: "0x65d970953bbe77654553a7069c5a18fe7aaa901d",
-    name: "YATV",
+    name: "Warly",
     team: ["plant", "dusk", "aqua"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 1035,
     unclaimedSlp: 0,
-    startDate: "March 14 2022 08:00:00 GMT+0800"
+    startDate: "March 29 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xe59ebe504549c9bdf7c47691f0dcb64f8f25347a",
