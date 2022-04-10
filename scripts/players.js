@@ -75,11 +75,11 @@ var playersList =
   },
   {
     id: "0xbe80e12b74bf3de5a4474a55c53f6870ac41dfb6",
-    name: "JohnRic",
+    name: "Kevin",
     team: ["plant", "dusk", "beast"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 52,
     unclaimedSlp: 0,
-    startDate: "April 4 2022 08:00:00 GMT+0800"
+    startDate: "April 10 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x4eef0012bfad763050b3155366de3c38e02ea630",
