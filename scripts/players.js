@@ -10,11 +10,11 @@ var playersList =
   },
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
-    name: "Jaycee",
+    name: "New Player",
     team: ["plant", "aqua", "mech"],
-    totalFarmedPrevCutoff: 0,
+    totalFarmedPrevCutoff: 476,
     unclaimedSlp: 0,
-    startDate: "April 4 2022 08:00:00 GMT+0800"
+    startDate: "April 20 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
