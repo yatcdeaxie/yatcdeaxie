@@ -10,7 +10,7 @@ var playersList =
   },
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
-    name: "New Player",
+    name: "JonAaru",
     team: ["plant", "aqua", "mech"],
     totalFarmedPrevCutoff: 476,
     unclaimedSlp: 0,
