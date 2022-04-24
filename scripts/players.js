@@ -2,11 +2,11 @@ var playersList =
 [
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "Sense28",
-    team: ["plant", "reptile", "mech"],
+    name: "New Player",
+    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "April 24 2022 08:00:00 GMT+0800"
+    startDate: "April 26 2022 08:00:00 GMT+0800"
   },
   {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
@@ -28,7 +28,7 @@ var playersList =
   {
     id: "0x472a0453d9223768053e410bb30d19d5122d1598",
     name:"PogsGaming",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "April 24 2022 08:00:00 GMT+0800"
@@ -107,7 +107,7 @@ var playersList =
   },
   {
     id: "0xd42f848361be0fcdd5a73fcc2858c7f07a213c6e",
-    name: "Mr. Feeders",
+    name: "Vincenzo",
     team: ["plant", "reptile", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -115,7 +115,7 @@ var playersList =
   },
   {
     id: "0x8a17825f5e3414815b4398afa999a3ef552649da",
-    name: "SoloGamer003",
+    name: "Khervin",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -131,7 +131,7 @@ var playersList =
   },
   {
     id: "0x364936bd94227688272fa3597d46cd877ce25d28",
-    name: "Kirov12sg",
+    name: "Bugssss",
     team: ["plant", "dusk", "mech"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
