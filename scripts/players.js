@@ -2,7 +2,7 @@ var playersList =
 [
   {
     id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "New Player",
+    name: "Yo-Kai",
     team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
