@@ -83,11 +83,11 @@ var playersList =
   },
   {
     id: "0x4eef0012bfad763050b3155366de3c38e02ea630",
-    name: "Melvin",
-    team: ["plant", "dusk", "dusk"],
+    name: "Kyno18",
+    team: ["plant", "dusk", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
-    startDate: "April 24 2022 08:00:00 GMT+0800"
+    startDate: "April 28 2022 08:00:00 GMT+0800"
   },
   {
     id: "0xf4f0696ef63f777a599633e310c84d9d3042ec9d",
@@ -164,7 +164,7 @@ var playersList =
   {
     id: "0x715b802842b6f5fea16496afeceb592af123712b",
     name: "Artemiz",
-    team: ["plant", "reptile", "beast"],
+    team: ["plant", "reptile", "dusk"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "April 24 2022 08:00:00 GMT+0800"
