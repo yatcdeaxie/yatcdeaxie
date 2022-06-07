@@ -17,15 +17,6 @@ var playersList =
     startDate: "June 5 2022 08:00:00 GMT+0800"
   },
   {
-    id: "0xbd2cd6f79113c2780e0ec353fc49d16aadc94d9e",
-    name: "Earl",
-    team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    deductedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
-  {
     id: "0x472a0453d9223768053e410bb30d19d5122d1598",
     name:"PogsGaming",
     team: ["plant", "reptile", "mech"],
@@ -169,14 +160,7 @@ var playersList =
     unclaimedSlp: 0,
     startDate: "June 5 2022 08:00:00 GMT+0800"
   },
-  {
-    id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
-    name: "Null",
-    team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
+
   {
     id: "0xe79aa3b463de742543e1e821603091ccb113cdfc",
     name: "Klayd",
@@ -197,14 +181,6 @@ var playersList =
     id: "0x06c8a16d10055a6a26846b6db7117220c423bb5d",
     name: "Daemusin",
     team: ["plant", "reptile", "aqua"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
-  {
-    id: "0x3d50e9b9bcbf4220cfcbd1b1f0e2a948bdff0c72",
-    name: "Null2",
-    team: ["plant", "reptile", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "June 5 2022 08:00:00 GMT+0800"
