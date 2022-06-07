@@ -1,14 +1,6 @@
 var playersList = 
 [
   {
-    id: "0xe93f2622be726d62c371a0589a47d2da8c683f9d",
-    name: "Yo-Kai",
-    team: ["plant", "reptile", "beast"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
-  {
     id: "0x00f1224b055edcb0accab42eda55df0bf00f48a4",
     name: "JonAaru",
     team: ["plant", "aqua", "mech"],
@@ -81,14 +73,6 @@ var playersList =
     startDate: "June 5 2022 08:00:00 GMT+0800"
   },
   {
-    id: "0x9c30fc866ea789a53899b6478b50d6f22ceb3e99",
-    name: "Meys",
-    team: ["plant", "dusk", "aqua"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
-  {
     id: "0xd42f848361be0fcdd5a73fcc2858c7f07a213c6e",
     name: "Vincenzo",
     team: ["plant", "reptile", "mech"],
@@ -129,14 +113,6 @@ var playersList =
     startDate: "June 5 2022 08:00:00 GMT+0800"
   },
   {
-    id: "0xca44ecc383572215e47d4eda640183cab6816c47",
-    name: "Jeffrey Valerio",
-    team: ["plant", "reptile", "mech"],
-    totalFarmedPrevCutoff: 0,
-    unclaimedSlp: 0,
-    startDate: "June 5 2022 08:00:00 GMT+0800"
-  },
-  {
     id: "0x8ec62ab60f293c9eba1d319874d5483886ea49be",
     name: "Bibe",
     team: ["plant", "reptile", "beast"],
@@ -146,7 +122,7 @@ var playersList =
   },
   {
     id: "0x715b802842b6f5fea16496afeceb592af123712b",
-    name: "Artemiz",
+    name: "40ENERGY",
     team: ["plant", "reptile", "dusk"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -216,5 +192,13 @@ var playersList =
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
     startDate: "June 5 2022 08:00:00 GMT+0800"
-  }
+  },
+  {
+    id: "0xdb8e152e80f50c59695265b939f4d7f5911b789e",
+    name: "20ENERGY",
+    team: ["plant", "reptile", "mech"],
+    totalFarmedPrevCutoff: 0,
+    unclaimedSlp: 0,
+    startDate: "June 5 2022 08:00:00 GMT+0800"
+  },
 ]
