@@ -288,10 +288,10 @@ $(document).ready(() => {
   function getPlayerAxieInfo(id) {
     $.ajax({
       type: "GET",
-      url: `https://game-api.skymavis.com/game-api/clients/${id}/items/1`,
+      url: `https://game-api-pre.skymavis.com/v1/players/${id}/items/1`,
       dataType: "json",
       success: function (result, status, xhr) {
-        let playerId = result.client_id;
+        let playerId = result.clientID;
         let player = players.find((player) => player.id === playerId);
         let unclaimedSlp = player.unclaimedSlp;
         let totalFarmedPrevCutoff = player.totalFarmedPrevCutoff;
