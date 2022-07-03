@@ -82,7 +82,7 @@ var playersList =
   },
   {
     id: "0x8a17825f5e3414815b4398afa999a3ef552649da",
-    name: "Available Account 40En",
+    name: "Available Account 1",
     team: ["plant", "dusk", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -147,7 +147,7 @@ var playersList =
   },
   {
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
-    name: "Available Account 20En",
+    name: "Available Account 2",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
