@@ -296,7 +296,8 @@ $(document).ready(() => {
         let unclaimedSlp = player.unclaimedSlp;
         let totalFarmedPrevCutoff = player.totalFarmedPrevCutoff;
         let deductedSlp = player?.deductedSlp || 0;
-        let totalFarmed = (result.total - deductedSlp) || 0;
+        let unclaimedTotalFarmed = result.rawTotal - result.rawClaimableTotal;
+        let totalFarmed = (unclaimedTotalFarmed - deductedSlp) || 0;
         let totalSlpCollected = totalFarmed - totalFarmedPrevCutoff;
         let averageSlpPerDay = getAverageSlpPerDay(player.startDate, totalSlpCollected) || 0;
         let avgSlpBadgeColor = setAvgSlpBadgeColor(averageSlpPerDay);
@@ -359,7 +360,7 @@ $(document).ready(() => {
       success: function (result, status, xhr) {
         var slpPrice = $(".slp-price");
         let slp = Object.values(result).find((slp) => slp.php);
-        slpPhPrice = slp.php.toFixed(2);
+        slpPhPrice = slp.php.toFixed(3);
         slpPrice.append(`${slpPhPrice}`);
         $("slp").text(slpPrice);
         createPlayersTable();

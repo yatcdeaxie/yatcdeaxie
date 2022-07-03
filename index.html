@@ -1,14 +1,17 @@
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yatcde Axie Team">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yatcde Axie Team" />
     <title>Yatcde Axie Team</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
 
     <script src="scripts/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
@@ -17,30 +20,47 @@
   </head>
   <body class="page-background">
     <div class="container-fluid top-header">
-      <img src='img/logo.png' alt="logo" class="header-icon img-fluid">
+      <img src="img/logo.png" alt="logo" class="header-icon img-fluid" />
       <div class="signout">
         Logout
-        <img src='img/signout.svg' alt="logo"/>
+        <img src="img/signout.svg" alt="logo" />
       </div>
     </div>
 
     <!-- Login -->
     <div class="container-fluid login-form">
       <div class="card">
-        <div class="card-body">  
-          <div class="card-text">  
-            <form>  
-              <div class="form-group">  
-                <label for="passcode">Get your passcode from Yatcde/YATV via Discord to access the Tracker.</label>  
-                <input type="text" id="passcode" placeholder="Enter your passcode..." class="form-control">
-                <div class="invalid-feedback">Please input a valid passcode</div> 
+        <div class="card-body">
+          <div class="card-text">
+            <form>
+              <div class="form-group">
+                <label for="passcode"
+                  >Get your passcode from Yatcde/YATV via Discord to access the
+                  Tracker.</label
+                >
+                <input
+                  type="text"
+                  id="passcode"
+                  placeholder="Enter your passcode..."
+                  class="form-control"
+                />
+                <div class="invalid-feedback">
+                  Please input a valid passcode
+                </div>
               </div>
-              
-              <button type="submit" id="submit-passcode" i class="btn btn-primary btn-block">Sign in</button>
-            </form>  
-          </div>  
+
+              <button
+                type="submit"
+                id="submit-passcode"
+                i
+                class="btn btn-primary btn-block"
+              >
+                Sign in
+              </button>
+            </form>
+          </div>
         </div>
-      </div>  
+      </div>
     </div>
 
     <div id="body-container">
@@ -49,7 +69,7 @@
           <div class="col">
             <div class="pdB-20 white-text slp-container">
               <div class="fs-12 pdB-10">SLP PRICE</div>
-              <div class="badge badge-warning  w-70 fs-20">
+              <div class="badge badge-warning w-77 fs-20">
                 ₱<span class="slp-price" id="slp"></span>
               </div>
             </div>
@@ -69,14 +89,20 @@
       <!-- Player Statistics -->
       <article class="mgB-20">
         <div class="container-fluid">
-
           <!-- Arena and Adventure -->
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active slp-earned" data-toggle="tab" href="#slp-earned">FARMING</a>
+              <a
+                class="nav-link active slp-earned"
+                data-toggle="tab"
+                href="#slp-earned"
+                >FARMING</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link arena" data-toggle="tab" href="#slp-earned">ARENA</a>
+              <a class="nav-link arena" data-toggle="tab" href="#slp-earned"
+                >ARENA</a
+              >
             </li>
           </ul>
           <!-- Player Table -->
@@ -86,11 +112,31 @@
                 <table class="table table-dark table-players" id="player-list">
                   <thead>
                     <tr>
-                      <th style="width: 25%;">PLAYER</th>
-                      <th style="width: 25%; text-align: right; display: none" class="mmr">MMR</th>
-                      <th style="width: 25%; text-align: right; display: none" class="ranking">RANKING</th>
-                      <th style="width: 20%; text-align: right;" class="daily-avg">DAILY<BR>AVG.</th>
-                      <th style="width: 30%; text-align: right;" class="claimableSlp">EARNED<BR>SLP</th>
+                      <th style="width: 25%">PLAYER</th>
+                      <th
+                        style="width: 25%; text-align: right; display: none"
+                        class="mmr"
+                      >
+                        MMR
+                      </th>
+                      <th
+                        style="width: 25%; text-align: right; display: none"
+                        class="ranking"
+                      >
+                        RANKING
+                      </th>
+                      <th
+                        style="width: 20%; text-align: right"
+                        class="daily-avg"
+                      >
+                        DAILY<br />AVG.
+                      </th>
+                      <th
+                        style="width: 30%; text-align: right"
+                        class="claimableSlp"
+                      >
+                        EARNED<br />SLP
+                      </th>
                     </tr>
                   </thead>
                   <tbody class="table-body"></tbody>
@@ -104,13 +150,17 @@
       <!-- Battle history modal -->
       <div id="battleHistoryModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="team-name-battle-history"></h5>
-              
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -119,9 +169,21 @@
               <div class="game-link"></div>
             </div>
             <div class="modal-footer">
-              <div class="mr-auto watch-replay">Click a row to watch replay</div>
-              <svg class="color-lightgreen" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
-                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
+              <div class="mr-auto watch-replay">
+                Click a row to watch replay
+              </div>
+              <svg
+                class="color-lightgreen"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-square-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"
+                />
               </svg>
               <div>WINNER</div>
             </div>
@@ -134,10 +196,12 @@
         <div class="container-fluid">
           <div class="lightgray-cont br-8 pd-10">
             <span id="wallet-player-name" class="fs-14"></span>
-            <div class="fs-12">Average SLP in <span id="wallet-farming-days"></span> Days :
+            <div class="fs-12">
+              Average SLP in <span id="wallet-farming-days"></span> Days :
               <span id="wallet-avg-slp-per-day"></span>
             </div>
-            <div class="fs-12 pdB-10">Start Date: 
+            <div class="fs-12 pdB-10">
+              Start Date:
               <span id="wallet-start-date"></span>
             </div>
             <div class="wallet-header fs-12">MY WALLET</div>
@@ -145,33 +209,42 @@
               <table class="table table-hover mB-0" id="player-wallet">
                 <thead>
                   <tr>
-                    <th style="width: 25%;"></th>
-                    <th style="width: 25%; text-align: right;">SLP</th>
-                    <th style="width: 25%; text-align: right;">IN PHP</th>
+                    <th style="width: 25%"></th>
+                    <th style="width: 25%; text-align: right">SLP</th>
+                    <th style="width: 25%; text-align: right">IN PHP</th>
                   </tr>
                 </thead>
                 <tbody class="wallet-body">
                   <tr>
-                    <td>Total Farmed <br/>(this payout)</td>
-                    <td id="wallet-total-farmed-slp" class="tAlign-right">+0</td>
-                    <td id="wallet-total-farmed-php" class="tAlign-right">+₱0</td>
+                    <td>Total Farmed <br />(this payout)</td>
+                    <td id="wallet-total-farmed-slp" class="tAlign-right">
+                      +0
+                    </td>
+                    <td id="wallet-total-farmed-php" class="tAlign-right">
+                      +₱0
+                    </td>
                   </tr>
                   <tr>
-                    <td>Fee 
+                    <td>
+                      Fee
                       <span id="wallet-fee"></span>
                     </td>
                     <td id="wallet-fee-slp" class="tAlign-right">-0</td>
                     <td id="wallet-fee-php" class="tAlign-right">-₱0</td>
                   </tr>
                   <tr>
-                    <td>Unclaimed SLP <br/>(from prev. payout)</td>
+                    <td>Unclaimed SLP <br />(from prev. payout)</td>
                     <td id="wallet-unclaimed-slp" class="tAlign-right">+0</td>
                     <td id="wallet-unclaimed-php" class="tAlign-right">+₱0</td>
                   </tr>
                   <tr>
                     <td><strong>PAYOUT</strong></td>
-                    <td id="wallet-claimable-slp" class="tAlign-right fw-700">0</td>
-                    <td id="wallet-claimable-php" class="tAlign-right fw-700">₱0</td>
+                    <td id="wallet-claimable-slp" class="tAlign-right fw-700">
+                      0
+                    </td>
+                    <td id="wallet-claimable-php" class="tAlign-right fw-700">
+                      ₱0
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -186,7 +259,9 @@
         <div class="container-fluid">
           <div class="lightgray-cont br-8 pd-10">
             <!-- SLP Sharing -->
-            <div class="pink-text pdT-10"><strong>Effective: February 5, 2022</strong></div>
+            <div class="pink-text pdT-10">
+              <strong>Effective: February 5, 2022</strong>
+            </div>
             <table class="table table-hover mB-0">
               <thead>
                 <tr>
@@ -197,7 +272,9 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><span class="badge badge-success fs-12">80 and above</span></td>
+                  <td>
+                    <span class="badge badge-success fs-12">80 and above</span>
+                  </td>
                   <td>50%</td>
                   <td>50%</td>
                 </tr>
@@ -209,8 +286,11 @@
                 <tr>
                   <td><span class="badge badge-dark fs-12">below 40</span></td>
                   <td>100%</td>
-                  <td>0 
-                    <span class="badge badge-dark payout-status">FORFEITED</span>
+                  <td>
+                    0
+                    <span class="badge badge-dark payout-status"
+                      >FORFEITED</span
+                    >
                   </td>
                 </tr>
               </tbody>
