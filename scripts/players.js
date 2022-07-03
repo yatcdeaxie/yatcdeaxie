@@ -82,7 +82,7 @@ var playersList =
   },
   {
     id: "0x8a17825f5e3414815b4398afa999a3ef552649da",
-    name: "Available Account 2",
+    name: "Available Account 40En",
     team: ["plant", "dusk", "beast"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -122,7 +122,7 @@ var playersList =
   },
   {
     id: "0x715b802842b6f5fea16496afeceb592af123712b",
-    name: "Available Account 2",
+    name: "ChaEunWoo",
     team: ["plant", "reptile", "dusk"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
@@ -147,7 +147,7 @@ var playersList =
   },
   {
     id: "0x8f226bf44e46dcb1719d5793ac7d944f48031bb7",
-    name: "Dlwlrma",
+    name: "Available Account 20En",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
