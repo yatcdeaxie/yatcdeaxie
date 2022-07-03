@@ -155,7 +155,7 @@ var playersList =
   },
   {
     id: "0x06c8a16d10055a6a26846b6db7117220c423bb5d",
-    name: "Daemusin",
+    name: "Available Account 3",
     team: ["plant", "reptile", "aqua"],
     totalFarmedPrevCutoff: 0,
     unclaimedSlp: 0,
