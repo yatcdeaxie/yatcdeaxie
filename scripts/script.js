@@ -238,7 +238,7 @@ $(document).ready(() => {
     return unclaimedSlp * slpPhPrice;
   }
 
- /* function getFee(aveSlp) {
+ function getFee(aveSlp) {
     let fee = 0;
     if (aveSlp >= 80) {
       fee = '50';
@@ -248,7 +248,7 @@ $(document).ready(() => {
       fee = '100';
     }
     return fee;
-  } */
+  } 
   
   function setPlayerWallet(player, totalSlp = 0, claimableSlp = 0, totalPhp = 0, averageSlpPerDay = 0, unclaimedSlp = 0) {
     let playerFee = getFee(averageSlpPerDay) || 0;
@@ -311,6 +311,15 @@ $(document).ready(() => {
         }
         let activePlayerAdmin = loggedInPlayer.id === '0x67718777cc6aac1d2c9f9a1240ad32ea34fea63e';
         let feeDisplay = !activePlayerAdmin ? 'display: none;' : '';
+
+
+
+
+
+        /* Revison August 8, 2022
+
+
+        */
 
         $(`#${playerId} .claimable-slp`).replaceWith(`
           <span class="claimable-slp badge badge-light">${numberWithCommas(claimableSlp)}</span>
